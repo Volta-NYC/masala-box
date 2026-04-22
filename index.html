@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masala Box — Nouvelle Indian Cuisine · Bayside, NY</title>
+<meta name="description" content="Masala Box — Contemporary Indian restaurant on Bell Boulevard, Bayside, Queens. Nouvelle Indian cuisine by Chef Sumita Gohal-Verma. Halal-certified. Dine in, takeout & catering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET & TOKENS ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --saffron:   #E8531A;
+  --crimson:   #BF2D0A;
+  --ember:     #F4962A;
+  --rose:      #D94F5C;
+  --gold:      #C4791A;
+  --cream:     #FDF6EE;
+  --parchment: #F5EBD8;
+  --espresso:  #2D1508;
+  --bark:      #5C2D0E;
+  --smoke:     #8C6B52;
+  --white:     #FFFFFF;
+  --nav-h:     72px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--espresso);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── UTILITY ── */
+.section-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.section-label--light { color: var(--ember); }
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--espresso);
+  margin-bottom: 1.25rem;
+}
+.section-title--light { color: var(--cream); }
+
+hr.ornament {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--saffron) 30%, var(--saffron) 70%, transparent);
+  margin: 1.25rem 0 2.5rem;
+  opacity: 0.45;
+}
+hr.ornament--light { opacity: 0.2; }
+
+.body-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--bark);
+  line-height: 1.85;
+  max-width: 600px;
+}
+.body-text--light { color: rgba(253,246,238,0.6); max-width: 600px; }
+
+.btn {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+.btn--primary {
+  background: var(--saffron);
+  color: var(--white);
+}
+.btn--primary:hover { background: var(--crimson); }
+.btn--outline {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(253,246,238,0.35);
+}
+.btn--outline:hover { border-color: var(--ember); color: var(--ember); }
+.btn--ghost {
+  background: transparent;
+  color: var(--saffron);
+  border: 1px solid var(--saffron);
+}
+.btn--ghost:hover { background: var(--saffron); color: var(--white); }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── NAV ── */
+#nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+#nav.scrolled {
+  background: rgba(45,21,8,0.97);
+  box-shadow: 0 1px 24px rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+.nav-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(232,83,26,0.3);
+}
+.nav-brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--cream);
+  letter-spacing: 0.05em;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(253,246,238,0.55);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ember); }
+.nav-cta {
+  background: var(--saffron);
+  color: var(--white) !important;
+  padding: 9px 22px;
+  border-radius: 3px;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--crimson); color: var(--white) !important; }
+
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--cream);
+  transition: all 0.3s;
+}
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  background: var(--espresso);
+  padding: 2rem;
+  z-index: 999;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(253,246,238,0.6);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  #nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+}
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  background: #141004;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 2rem 4rem;
+}
+#heroCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.85;
+}
+
+
+.hero-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(232,83,26,0.35), 0 0 60px rgba(232,83,26,0.3);
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(56px, 10vw, 96px);
+  font-weight: 300;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.5rem;
+}
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ember);
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.hero-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--saffron), transparent);
+  margin: 0 auto 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 3vw, 30px);
+  font-style: italic;
+  color: rgba(253,246,238,0.75);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+.hero-tagline-translation {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(253,246,238,0.35);
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-meta {
+  position: absolute;
+  bottom: 2.5rem;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  color: rgba(253,246,238,0.25);
+  z-index: 1;
+}
+
+/* ── ABOUT ── */
+#about {
+  padding: 7rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+@media (max-width: 820px) {
+  #about { grid-template-columns: 1fr; gap: 3rem; }
+}
+.about-visual {
+  position: relative;
+}
+.about-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  background: linear-gradient(160deg, #3D1E0A 0%, #2D1508 60%, #1A0D05 100%);
+  overflow: hidden;
+  position: relative;
+}
+.about-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 35%, rgba(232,83,26,0.25) 0%, transparent 65%);
+}
+.about-img-ornament {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  opacity: 0.12;
+}
+.about-established {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: var(--saffron);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 3px;
+}
+.about-established-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1;
+  display: block;
+}
+.about-established-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-top: 4px;
+  display: block;
+}
+.about-pillars {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+  border-top: 0.5px solid rgba(45,21,8,0.12);
+}
+.about-pillar {
+  display: flex;
+  gap: 2rem;
+  align-items: baseline;
+  padding: 0.9rem 0;
+  border-bottom: 0.5px solid rgba(45,21,8,0.08);
+}
+.about-pillar-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--espresso);
+  white-space: nowrap;
+  min-width: 130px;
+}
+.about-pillar-body {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--smoke);
+  line-height: 1.6;
+}
+
+/* ── CHEF ── */
+#chef {
+  background: var(--espresso);
+  padding: 7rem 2rem;
+}
+.chef-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+@media (max-width: 820px) {
+  .chef-inner { grid-template-columns: 1fr; gap: 3rem; }
+}
+.chef-img-wrap {
+  position: relative;
+}
+.chef-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  background: linear-gradient(160deg, rgba(232,83,26,0.15) 0%, rgba(45,21,8,0.6) 100%);
+  border: 0.5px solid rgba(244,150,42,0.12);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+.chef-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(253,246,238,0.7);
+  line-height: 1.5;
+  border-left: 2px solid var(--saffron);
+  padding-left: 1.25rem;
+}
+.chef-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.25rem;
+  margin-top: 2rem;
+}
+.chef-title {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+.chef-badges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.chef-badge {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232,83,26,0.9);
+  background: rgba(232,83,26,0.12);
+  border: 0.5px solid rgba(232,83,26,0.25);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* ── SPICE SPOTLIGHT ── */
+#spice {
+  background: var(--parchment);
+  padding: 7rem 2rem;
+}
+.spice-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.spice-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+@media (max-width: 900px) { .spice-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .spice-grid { grid-template-columns: 1fr; } }
+.spice-card {
+  background: var(--cream);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(45,21,8,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.spice-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(45,21,8,0.15);
+}
+.spice-color {
+  height: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spice-emoji {
+  font-size: 36px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
+}
+.spice-info { padding: 1.25rem; }
+.spice-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 0.25rem;
+}
+.spice-origin {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.spice-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--smoke);
+  line-height: 1.65;
+}
+
+/* ── MENU ── */
+#menu-wrap {
+  background: var(--parchment);
+  border-top: 0.5px solid rgba(45,21,8,0.07);
+  border-bottom: 0.5px solid rgba(45,21,8,0.07);
+}
+#menu {
+  padding: 7rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.menu-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(45,21,8,0.12);
+  margin-bottom: 3rem;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.menu-tabs::-webkit-scrollbar { display: none; }
+.menu-tab {
+  padding: 12px 24px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.menu-tab:hover { color: var(--saffron); }
+.menu-tab.active { color: var(--saffron); border-bottom-color: var(--saffron); }
+
+.menu-panel { display: none; }
+.menu-panel.active { display: block; }
+
+.menu-grid {
+  display: block;
+  max-width: 720px;
+}
+
+.menu-item {
+  padding: 1.25rem 0;
+  border-bottom: 0.5px solid rgba(45,21,8,0.09);
+  background: none;
+}
+.menu-item:first-child { border-top: 0.5px solid rgba(45,21,8,0.09); }
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+.menu-item-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--espresso);
+  line-height: 1.3;
+}
+.menu-item-price {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--bark);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.menu-item-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--smoke);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+  max-width: 560px;
+}
+.menu-item-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.badge {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+.badge--halal { background: rgba(244,150,42,0.12); color: var(--gold); }
+.badge--veg   { background: rgba(72,132,62,0.1); color: #3A7A30; }
+.badge--gf    { background: rgba(44,82,160,0.1); color: #2C52A0; }
+.badge--spicy { background: rgba(232,83,26,0.1); color: var(--saffron); }
+.badge--chef  { background: rgba(45,21,8,0.08); color: var(--bark); }
+
+.menu-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--espresso);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.5px solid rgba(45,21,8,0.1);
+}
+
+/* ── SPECIALS ── */
+#specials {
+  background: var(--espresso);
+  padding: 7rem 2rem;
+}
+.specials-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+@media (max-width: 820px) { .specials-grid { grid-template-columns: 1fr; } }
+.special-card {
+  background: rgba(253,246,238,0.04);
+  border: 0.5px solid rgba(253,246,238,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.special-card:hover {
+  border-color: rgba(232,83,26,0.4);
+  transform: translateY(-4px);
+}
+.special-img {
+  height: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  overflow: hidden;
+}
+.special-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(45,21,8,0.6));
+}
+.special-body { padding: 1.5rem; }
+.special-tag {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.special-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.4rem;
+}
+.special-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(253,246,238,0.45);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.special-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.special-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ember);
+}
+
+/* ── GALLERY ── */
+#gallery {
+  background: var(--espresso);
+  padding: 7rem 2rem;
+}
+#gallery .section-title { color: var(--cream); }
+.gallery-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.gallery-slider {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  align-items: start;
+  gap: 3rem 5rem;
+  margin-top: 3rem;
+}
+@media (max-width: 900px) {
+  .gallery-slider { grid-template-columns: 1fr; }
+}
+.gallery-text-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.gallery-slide-text {
+  cursor: default;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 44px);
+  font-weight: 300;
+  color: var(--cream);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  user-select: none;
+  display: block;
+}
+.gs-char {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  vertical-align: bottom;
+}
+.gs-char-a {
+  display: inline-block;
+  opacity: 0.18;
+  transform: translateY(0%);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.3s;
+}
+.gs-char-b {
+  display: inline-block;
+  position: absolute;
+  left: 0; top: 0;
+  transform: translateY(110%);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gallery-slide-text.active .gs-char-a {
+  transform: translateY(-110%);
+  opacity: 1;
+}
+.gallery-slide-text.active .gs-char-b {
+  transform: translateY(0%);
+}
+
+.gallery-image-wrap {
+  display: grid;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4/5;
+  outline: 1.5px solid rgba(232,83,26,0.65);
+  outline-offset: 8px;
+}
+.gallery-image-wrap > * {
+  grid-column: 1;
+  grid-row: 1;
+}
+.gallery-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  transition: clip-path 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.gallery-slide-img.active {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+@media (max-width: 760px) {
+  .gallery-slider { flex-direction: column; align-items: flex-start; }
+  .gallery-image-wrap { width: 100%; aspect-ratio: 4/3; }
+}
+
+/* ── REVIEWS ── */
+#reviews {
+  background: var(--parchment);
+  padding: 7rem 2rem;
+}
+.reviews-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.reviews-score-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+}
+.reviews-score {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  color: var(--espresso);
+  line-height: 1;
+}
+.reviews-count {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--smoke);
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 0 5rem;
+  align-items: start;
+}
+@media (max-width: 820px) { .reviews-grid { grid-template-columns: 1fr; gap: 3rem 0; } }
+.review-card { background: none; box-shadow: none; padding: 0; border-radius: 0; }
+.review-card:nth-child(2) { border-top: 0.5px solid rgba(45,21,8,0.1); padding-top: 1.75rem; }
+.review-card:nth-child(3) { border-top: 0.5px solid rgba(45,21,8,0.1); padding-top: 1.75rem; margin-top: 1.75rem; }
+@media (max-width: 820px) {
+  .review-card:nth-child(2), .review-card:nth-child(3) { grid-column: 1; }
+}
+.review-card:first-child .review-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--espresso);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+.review-text {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--bark);
+  line-height: 1.75;
+  margin-bottom: 0.85rem;
+  font-style: italic;
+}
+.review-author {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--espresso);
+}
+.review-source {
+  font-size: 10px;
+  font-weight: 300;
+  color: var(--smoke);
+  margin-top: 2px;
+}
+
+/* ── CATERING ── */
+#catering {
+  padding: 7rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+@media (max-width: 820px) { #catering { grid-template-columns: 1fr; gap: 3rem; } }
+.catering-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 2rem 0 2.5rem;
+}
+.catering-feature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.catering-feature-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--saffron);
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.catering-feature-text {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--bark);
+  line-height: 1.65;
+}
+.catering-visual {
+  background: linear-gradient(160deg, var(--parchment), var(--cream));
+  border-radius: 4px;
+  aspect-ratio: 4/3;
+  border: 0.5px solid rgba(45,21,8,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  position: relative;
+  overflow: hidden;
+}
+.catering-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 40% 40%, rgba(232,83,26,0.1) 0%, transparent 65%);
+}
+
+/* ── CONTACT ── */
+#contact {
+  background: var(--espresso);
+  padding: 7rem 2rem;
+}
+.contact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+}
+@media (max-width: 820px) { .contact-inner { grid-template-columns: 1fr; gap: 3rem; } }
+.contact-info-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+.contact-block-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(244,150,42,0.6);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+.contact-block-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.4;
+}
+.contact-block-detail {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(253,246,238,0.4);
+  margin-top: 0.25rem;
+}
+.hours-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.4rem 1.5rem;
+  align-items: baseline;
+  margin-top: 0.5rem;
+}
+.hours-day {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(253,246,238,0.55);
+}
+.hours-dot {
+  height: 1px;
+  background: rgba(253,246,238,0.12);
+  align-self: center;
+}
+.hours-time {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(253,246,238,0.75);
+  text-align: right;
+}
+.hours-closed { color: rgba(253,246,238,0.25) !important; }
+
+/* Reservation Form */
+.reservation-form {
+  background: rgba(253,246,238,0.04);
+  border: 0.5px solid rgba(253,246,238,0.1);
+  border-radius: 10px;
+  padding: 2.5rem;
+}
+.form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.25rem;
+}
+.form-subtitle {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(253,246,238,0.4);
+  margin-bottom: 2rem;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(253,246,238,0.4);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(253,246,238,0.06);
+  border: 0.5px solid rgba(253,246,238,0.14);
+  border-radius: 4px;
+  padding: 11px 14px;
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: rgba(232,83,26,0.5);
+}
+.form-group select option { background: var(--espresso); }
+.form-group textarea { resize: vertical; min-height: 90px; }
+.form-full { grid-column: span 2; }
+@media (max-width: 480px) { .form-full { grid-column: span 1; } }
+.form-submit { width: 100%; margin-top: 1rem; font-size: 12px; padding: 16px; }
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  color: var(--ember);
+}
+.form-success-icon { font-size: 40px; margin-bottom: 0.75rem; }
+.form-success-text { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--cream); }
+
+/* ── PHILOSOPHY STRIP ── */
+#philosophy {
+  background: linear-gradient(135deg, var(--saffron), var(--crimson));
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#philosophy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(244,150,42,0.35), transparent 55%),
+              radial-gradient(circle at 70% 50%, rgba(191,45,10,0.35), transparent 55%);
+}
+.philosophy-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+.philosophy-translation {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--espresso);
+  border-top: 0.5px solid rgba(244,150,42,0.12);
+  padding: 4rem 2rem 2rem;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+@media (max-width: 820px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } }
+.footer-brand img { width: 48px; margin-bottom: 1rem; border-radius: 50%; box-shadow: 0 0 0 1px rgba(232,83,26,0.25); }
+.footer-brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 0.4rem;
+}
+.footer-brand-sub {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(253,246,238,0.3);
+  margin-bottom: 1.25rem;
+}
+.footer-brand-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(253,246,238,0.35);
+  line-height: 1.7;
+  max-width: 240px;
+}
+.footer-col-title {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.footer-links a {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(253,246,238,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--ember); }
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 0.5px solid rgba(253,246,238,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-copy {
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(253,246,238,0.2);
+  letter-spacing: 0.08em;
+}
+.footer-cert {
+  display: flex;
+  gap: 0.75rem;
+}
+.cert-pill {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 0.5px solid rgba(244,150,42,0.25);
+  color: rgba(244,150,42,0.6);
+}
+
+
+/* ── BACK TO TOP ── */
+#back-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background: var(--saffron);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.3s;
+  z-index: 500;
+  box-shadow: 0 4px 16px rgba(232,83,26,0.4);
+}
+#back-top.show { opacity: 1; transform: translateY(0); }
+#back-top svg { width: 18px; height: 18px; fill: var(--white); }
+
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav" aria-label="Main navigation">
+  <a href="#hero" class="nav-brand">
+    <img src="brand assets/masalalogo.jpg" alt="Masala Box Logo">
+    <span class="nav-brand-name">Masala Box</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile nav -->
+<div class="nav-mobile" id="mobileNav">
+  <a href="#about" onclick="closeMobileNav()">Our Story</a>
+  <a href="#menu" onclick="closeMobileNav()">Menu</a>
+  <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+  <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
+  <a href="#contact" onclick="closeMobileNav()" style="color:var(--ember)">Contact Us</a>
+</div>
+
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+  <img class="hero-logo" src="brand assets/masalalogo.jpg" alt="Masala Box">
+
+  <div class="hero-label">Nouvelle Indian Cuisine</div>
+  <h1 class="hero-title">Masala Box</h1>
+  <div class="hero-subtitle">Bayside, New York</div>
+  <div class="hero-divider" aria-hidden="true"></div>
+  <p class="hero-tagline">"Khao, pio, jiyo."</p>
+  <p class="hero-tagline-translation">Eat, drink, live.</p>
+
+  <div class="hero-actions">
+    <a href="tel:+17185550142" class="btn btn--primary">Call to Reserve</a>
+    <a href="#menu" class="btn btn--outline">View Menu</a>
+  </div>
+
+  <p class="hero-meta">4202 Bell Blvd · Bayside, NY · Est. 2014</p>
+</section>
+
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" aria-labelledby="about-title">
+  <div class="about-visual reveal">
+    <div class="about-img-placeholder">
+      <svg class="about-img-ornament" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="48" stroke="#E8531A" stroke-width="0.5"/>
+        <circle cx="50" cy="50" r="36" stroke="#E8531A" stroke-width="0.5"/>
+        <circle cx="50" cy="50" r="24" stroke="#E8531A" stroke-width="0.5"/>
+      </svg>
+      <!-- Mandala pattern echoing the logo -->
+      <svg viewBox="0 0 200 200" style="position:absolute;width:55%;opacity:0.08;" fill="none">
+        <g transform="translate(100,100)">
+          <circle r="80" stroke="#E8531A" stroke-width="1"/>
+          <circle r="55" stroke="#F4962A" stroke-width="0.8"/>
+          <circle r="30" stroke="#E8531A" stroke-width="0.8"/>
+          <line x1="-80" y1="0" x2="80" y2="0" stroke="#E8531A" stroke-width="0.5"/>
+          <line x1="0" y1="-80" x2="0" y2="80" stroke="#E8531A" stroke-width="0.5"/>
+          <line x1="-57" y1="-57" x2="57" y2="57" stroke="#E8531A" stroke-width="0.5"/>
+          <line x1="57" y1="-57" x2="-57" y2="57" stroke="#E8531A" stroke-width="0.5"/>
+        </g>
+      </svg>
+    </div>
+    <div class="about-established">
+      <span class="about-established-year">2014</span>
+      <span class="about-established-label">Est. Bayside, NY</span>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <span class="section-label">Our Story</span>
+    <h2 class="section-title" id="about-title">Named after the<br><em>masala dabba.</em></h2>
+    <hr class="ornament">
+    <p class="body-text">
+      Masala Box is on Bell Boulevard in Bayside, Queens. We named it after the <em>masala dabba</em> — the round steel spice tin every Indian household keeps on the counter. The idea was to cook food that feels like that: familiar, precise, made with intention.
+    </p>
+    <p class="body-text" style="margin-top:1.25rem;">
+      We cook fresh, we balance our spices, and we don't assume everyone wants the same heat level. Pull up a chair. This is our kitchen — tonight it's yours.
+    </p>
+
+    <div class="about-pillars">
+      <div class="about-pillar">
+        <div class="about-pillar-title">Halal Certified</div>
+        <div class="about-pillar-body">All protein sourced from certified halal suppliers.</div>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-title">Nouvelle Indian</div>
+        <div class="about-pillar-body">Traditional recipes, cooked with modern technique.</div>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-title">Family Owned</div>
+        <div class="about-pillar-body">Same owners, same kitchen, since 2014.</div>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-title">Inclusive Menu</div>
+        <div class="about-pillar-body">Vegetarian, gluten-free, and dairy-free options across the menu.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ═══ MENU ═══ -->
+<div id="menu-wrap">
+<section id="menu" aria-labelledby="menu-title">
+  <div class="reveal">
+    <span class="section-label">The Menu</span>
+    <h2 class="section-title" id="menu-title">What we cook<br>for you tonight.</h2>
+  </div>
+
+  <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+    <button class="menu-tab active" role="tab" aria-selected="true" onclick="switchTab(this,'starters')">Starters</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'mains')">Mains</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'biryani')">Biryani</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'breads')">Breads</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'desserts')">Desserts</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'drinks')">Drinks</button>
+  </div>
+
+  <!-- STARTERS -->
+  <div class="menu-panel active" id="panel-starters">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Lamb Chops Tikka</div>
+          <div class="menu-item-price">$24</div>
+        </div>
+        <p class="menu-item-desc">Rack of lamb slow-marinated in garam masala, yogurt, and ginger — char-kissed on the grill. Each one a small ceremony.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--chef">Chef's Pick</span>
+          <span class="badge badge--spicy">Medium</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Samosa Chaat</div>
+          <div class="menu-item-price">$14</div>
+        </div>
+        <p class="menu-item-desc">Crisp hand-folded samosas on a bed of spiced chickpeas, tamarind chutney, whipped yogurt, and chaat masala.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--veg">Vegetarian</span>
+          <span class="badge badge--halal">Halal</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Gilafi Seekh Kebab</div>
+          <div class="menu-item-price">$19</div>
+        </div>
+        <p class="menu-item-desc">Hand-minced lamb and beef seekh kebab wrapped in bell pepper and onion, skewered over open coal. Served with mint raita.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--spicy">Mild</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Paneer Tikka</div>
+          <div class="menu-item-price">$17</div>
+        </div>
+        <p class="menu-item-desc">House-pressed paneer in a saffron-turmeric marinade, skewered with peppers and onion, finished in the tandoor.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--veg">Vegetarian</span>
+          <span class="badge badge--gf">Gluten Free</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Dahi Puri</div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <p class="menu-item-desc">Hollow semolina shells filled with spiced potato, chickpeas, and tamarind water. Best eaten in one delicious bite.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--veg">Vegetarian</span>
+          <span class="badge badge--halal">Halal</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Chicken Malai Tikka</div>
+          <div class="menu-item-price">$18</div>
+        </div>
+        <p class="menu-item-desc">Tender chicken breast in a cream-and-cashew marinade with cardamom and white pepper. Very mild heat.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--spicy">Mild</span>
+          <span class="badge badge--gf">Gluten Free</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAINS -->
+  <div class="menu-panel" id="panel-mains">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Butter Chicken</div>
+          <div class="menu-item-price">$26</div>
+        </div>
+        <p class="menu-item-desc">Tandoor-roasted chicken in a slow-reduced tomato and cream sauce with fenugreek and a finishing spoon of cultured butter.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--chef">Chef's Pick</span>
+          <span class="badge badge--spicy">Mild</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Lamb Rogan Josh</div>
+          <div class="menu-item-price">$28</div>
+        </div>
+        <p class="menu-item-desc">Heritage-breed lamb braised for four hours in Kashmiri aromatics — fennel, dried ginger, and Ratan Jot for the color. Served with basmati.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--spicy">Medium</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Dal Makhani</div>
+          <div class="menu-item-price">$19</div>
+        </div>
+        <p class="menu-item-desc">Black lentils slow-cooked overnight with tomatoes, cream, and a touch of smoked butter. Vegetarian soul food.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--veg">Vegetarian</span>
+          <span class="badge badge--gf">Gluten Free</span>
+          <span class="badge badge--halal">Halal</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Saag Paneer</div>
+          <div class="menu-item-price">$21</div>
+        </div>
+        <p class="menu-item-desc">Fresh spinach and mustard greens with house-pressed paneer, finished with ghee-tempered garlic and cumin. Deeply comforting.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--veg">Vegetarian</span>
+          <span class="badge badge--gf">Gluten Free</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Prawn Masala</div>
+          <div class="menu-item-price">$29</div>
+        </div>
+        <p class="menu-item-desc">Atlantic prawns in a coastal Goan-inspired tomato, coconut, and tamarind masala with curry leaves and mustard oil.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--spicy">Medium</span>
+          <span class="badge badge--gf">Gluten Free</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Chana Masala</div>
+          <div class="menu-item-price">$18</div>
+        </div>
+        <p class="menu-item-desc">Punjab-style chickpeas in a bold, tangy tomato-onion sauce with amchur and house-blend chana masala. Hearty and bright.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--veg">Vegetarian</span>
+          <span class="badge badge--veg">Vegan</span>
+          <span class="badge badge--gf">Gluten Free</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIRYANI -->
+  <div class="menu-panel" id="panel-biryani">
+    <p class="body-text" style="margin-bottom:2rem;">Our biryanis are prepared using the traditional <em>dum pukht</em> method — sealed under dough and slow-cooked to let the steam do its work. Served with raita and salan.</p>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Gosht Dum Biryani</div>
+          <div class="menu-item-price">$32</div>
+        </div>
+        <p class="menu-item-desc">Slow-braised bone-in lamb with aged basmati, saffron, caramelized onions, and fried shallots. Sealed and finished in the oven.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--chef">Chef's Pick</span>
+          <span class="badge badge--spicy">Medium</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Chicken Biryani</div>
+          <div class="menu-item-price">$26</div>
+        </div>
+        <p class="menu-item-desc">Marinated chicken thigh with Hyderabadi spices, rose water, and long-grain basmati. Fragrant and rich from first bite to last.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--spicy">Mild</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Vegetable Dum Biryani</div>
+          <div class="menu-item-price">$22</div>
+        </div>
+        <p class="menu-item-desc">Seasonal vegetables layered with saffron milk, crispy shallots, mint, and aged basmati.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--veg">Vegetarian</span>
+          <span class="badge badge--gf">Gluten Free</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Prawn Biryani</div>
+          <div class="menu-item-price">$34</div>
+        </div>
+        <p class="menu-item-desc">Coastal-inspired biryani with tiger prawns in a light coconut and saffron broth, layered with fresh coriander and curry leaves.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--spicy">Mild</span>
+          <span class="badge badge--chef">Seasonal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADS -->
+  <div class="menu-panel" id="panel-breads">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Tandoori Roti</div>
+          <div class="menu-item-price">$4</div>
+        </div>
+        <p class="menu-item-desc">Whole wheat flatbread baked directly on the inner wall of our tandoor. Slight char, clean flavour — the honest bread.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Peshwari Naan</div>
+          <div class="menu-item-price">$7</div>
+        </div>
+        <p class="menu-item-desc">Soft leavened bread stuffed with coconut, almonds, and sultanas. A sweet counterpoint to bold curries.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Garlic Butter Naan</div>
+          <div class="menu-item-price">$6</div>
+        </div>
+        <p class="menu-item-desc">Classic leavened naan from the tandoor, finished with roasted garlic compound butter and fresh coriander.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Paratha</div>
+          <div class="menu-item-price">$6</div>
+        </div>
+        <p class="menu-item-desc">Layered whole wheat flatbread with ghee folded in. Flaky, crisp-edged, and perfect for scooping every last bit of sauce.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="menu-panel" id="panel-desserts">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Gulab Jamun</div>
+          <div class="menu-item-price">$10</div>
+        </div>
+        <p class="menu-item-desc">Soft milk-solid dumplings soaked in rose and cardamom syrup, served warm with pistachio ice cream.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--chef">Classic</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Mango Kulfi</div>
+          <div class="menu-item-price">$9</div>
+        </div>
+        <p class="menu-item-desc">Dense, slowly-frozen Indian ice cream made with Alphonso mango, condensed milk, and saffron. Served on a stick.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Shahi Tukda</div>
+          <div class="menu-item-price">$11</div>
+        </div>
+        <p class="menu-item-desc">Mughal royal bread pudding — saffron-soaked brioche with reduced rabri cream, rose petals, and silver leaf.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--chef">Chef's Pick</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Chai Crème Brûlée</div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <p class="menu-item-desc">Classic French brûlée infused with masala chai — cardamom, ginger, cinnamon — with a turmeric caramel crust.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINKS -->
+  <div class="menu-panel" id="panel-drinks">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Rose Lassi</div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <p class="menu-item-desc">Hand-churned yogurt blended with rose water, cardamom, and a touch of honey. Cooling, fragrant, and deeply refreshing.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Mango Lassi</div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <p class="menu-item-desc">Alphonso mango, whole-milk yogurt, a pinch of cardamom. Simple, seasonal, and unforgettable.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Masala Chai</div>
+          <div class="menu-item-price">$6</div>
+        </div>
+        <p class="menu-item-desc">Our house chai blend: Assam tea, whole milk, cracked cardamom, ginger, and cinnamon. Brewed to order, not from a concentrate.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Virgin Tamarind Spritz</div>
+          <div class="menu-item-price">$10</div>
+        </div>
+        <p class="menu-item-desc">House-made tamarind syrup, fresh lime, Tajin rim, and sparkling water. Bright, bold, and completely original.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegan</span><span class="badge badge--gf">Gluten Free</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Nimbu Pani</div>
+          <div class="menu-item-price">$6</div>
+        </div>
+        <p class="menu-item-desc">Indian lemonade with fresh lime, black salt, cumin water, and mint. Order it cold.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegan</span><span class="badge badge--gf">Gluten Free</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Saffron Thandai</div>
+          <div class="menu-item-price">$11</div>
+        </div>
+        <p class="menu-item-desc">A festive North Indian milk drink with saffron, rose petals, melon seeds, and a blend of warming spices. Served chilled.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span><span class="badge badge--chef">Seasonal</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;padding:1.5rem;background:rgba(45,21,8,0.04);border-radius:8px;border:0.5px solid rgba(45,21,8,0.1);">
+    <p style="font-size:12px;font-weight:300;color:var(--smoke);line-height:1.65;">
+      <strong style="color:var(--bark);font-weight:500;">Dietary key:</strong> &nbsp;
+      <span class="badge badge--halal" style="display:inline-block;">Halal</span> Halal-certified &nbsp;
+      <span class="badge badge--veg" style="display:inline-block;">Veg</span> Vegetarian &nbsp;
+      <span class="badge badge--gf" style="display:inline-block;">GF</span> Gluten-free &nbsp;
+      <span class="badge badge--spicy" style="display:inline-block;">Spicy</span> Heat level &nbsp;
+      <span class="badge badge--chef" style="display:inline-block;">Chef</span> Chef's recommendation
+      <br>Please inform your server of any allergies. Our kitchen handles nuts, dairy, and gluten.
+    </p>
+  </div>
+</section>
+
+
+
+
+</div><!-- /menu-wrap -->
+
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery" aria-labelledby="gallery-title">
+  <div class="gallery-inner">
+    <div class="reveal">
+      <h2 class="section-title" id="gallery-title">Look before<br>you eat.</h2>
+      <hr class="ornament ornament--light">
+    </div>
+    <div class="gallery-slider">
+      <div class="gallery-text-list">
+        <span class="gallery-slide-text" data-index="0">Lamb Chops Tikka</span>
+        <span class="gallery-slide-text" data-index="1">Gosht Dum Biryani</span>
+        <span class="gallery-slide-text" data-index="2">Butter Chicken</span>
+        <span class="gallery-slide-text" data-index="3">Saag Paneer</span>
+        <span class="gallery-slide-text" data-index="4">Prawn Masala</span>
+        <span class="gallery-slide-text" data-index="5">Masala Chai</span>
+      </div>
+      <div class="gallery-image-wrap">
+      <img class="gallery-slide-img" data-index="0"
+        src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80&auto=format&fit=crop"
+        alt="Lamb Chops Tikka">
+      <img class="gallery-slide-img" data-index="1"
+        src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80&auto=format&fit=crop"
+        alt="Gosht Dum Biryani">
+      <img class="gallery-slide-img" data-index="2"
+        src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=600&q=80&auto=format&fit=crop"
+        alt="Butter Chicken">
+      <img class="gallery-slide-img" data-index="3"
+        src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80&auto=format&fit=crop"
+        alt="Saag Paneer">
+      <img class="gallery-slide-img" data-index="4"
+        src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?w=600&q=80&auto=format&fit=crop"
+        alt="Prawn Masala">
+      <img class="gallery-slide-img" data-index="5"
+        src="https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?w=600&q=80&auto=format&fit=crop"
+        alt="Masala Chai">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ REVIEWS ═══ -->
+<section id="reviews" aria-labelledby="reviews-title">
+  <div class="reviews-inner">
+    <div class="reveal">
+      <h2 class="section-title" id="reviews-title">4,200+ guests.<br>One thing in common.</h2>
+      <hr class="ornament">
+    </div>
+
+    <div class="reviews-score-line reveal">
+      <span class="reviews-score">4.8</span>
+      <span class="reviews-count">4,200+ reviews — Google, Yelp, Tripadvisor</span>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <p class="review-text">"The lamb biryani alone is worth the trip from Manhattan. The seal on the pot comes off at the table — the aroma is enough to make you emotional. Best Indian food in New York, full stop."</p>
+        <div class="review-author">Priya M.</div>
+        <div class="review-source">Google · March 2025</div>
+      </div>
+      <div>
+        <div class="review-card">
+          <p class="review-text">"I don't eat Indian food often but my colleagues insisted. Chef Sumita came out to greet us personally, explained the spice blend in our dishes. That level of care shows up in every single bite."</p>
+          <div class="review-author">James T.</div>
+          <div class="review-source">Yelp · January 2025</div>
+        </div>
+        <div class="review-card" style="border-top: 0.5px solid rgba(45,21,8,0.1); padding-top: 1.75rem; margin-top: 1.75rem;">
+          <p class="review-text">"The Chai Crème Brûlée might be the most creative dessert I've had in years. The kind of dish that makes you rethink what a cuisine can be. Already booked our next visit."</p>
+          <div class="review-author">Fatima A.</div>
+          <div class="review-source">Tripadvisor · February 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="contact-inner" style="grid-template-columns:1fr;">
+    <div>
+      <span class="section-label section-label--light">Find Us</span>
+      <h2 class="section-title section-title--light" id="contact-title">Come for dinner.<br>Stay for chai.</h2>
+      <div class="contact-info-blocks" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.5rem;">
+        <div>
+          <span class="contact-block-label">Address</span>
+          <div class="contact-block-value">4202 Bell Blvd<br>Bayside, NY 11361</div>
+          <div class="contact-block-detail">Corner of Bell & 42nd Ave · Street parking available</div>
+        </div>
+        <div>
+          <span class="contact-block-label">Phone</span>
+          <div class="contact-block-value">(718) 555-0142</div>
+          <div class="contact-block-detail">Call or walk in — no reservation required</div>
+        </div>
+        <div>
+          <span class="contact-block-label">Hours</span>
+          <div class="hours-grid">
+            <span class="hours-day">Monday</span><div class="hours-dot"></div><span class="hours-time hours-closed">Closed</span>
+            <span class="hours-day">Tuesday – Thursday</span><div class="hours-dot"></div><span class="hours-time">12pm – 10pm</span>
+            <span class="hours-day">Friday</span><div class="hours-dot"></div><span class="hours-time">12pm – 11pm</span>
+            <span class="hours-day">Saturday</span><div class="hours-dot"></div><span class="hours-time">11am – 11pm</span>
+            <span class="hours-day">Sunday</span><div class="hours-dot"></div><span class="hours-time">11am – 9pm</span>
+          </div>
+        </div>
+        <div>
+          <span class="contact-block-label">Order &amp; Delivery</span>
+          <div class="contact-block-value">DoorDash · Uber Eats<br>Grubhub</div>
+          <div class="contact-block-detail">Online ordering also available</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="brand assets/masalalogo.jpg" alt="Masala Box">
+        <div class="footer-brand-name">Masala Box</div>
+        <div class="footer-brand-sub">Nouvelle Indian Cuisine</div>
+        <p class="footer-brand-desc">A family-owned contemporary Indian restaurant in Bayside, Queens. Named after the spice tin in every Indian kitchen.</p>
+      </div>
+      <div>
+        <span class="footer-col-title">Explore</span>
+        <ul class="footer-links">
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Full Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Visit</span>
+        <ul class="footer-links">
+          <li><a href="#contact">Hours &amp; Location</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Follow</span>
+        <ul class="footer-links">
+          <li><a href="#">@masalaboxny on Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Google Reviews</a></li>
+          <li><a href="#">Yelp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Masala Box · 4202 Bell Blvd, Bayside, NY 11361 · All rights reserved.</div>
+      <div class="footer-cert">
+        <span class="cert-pill">Halal Certified</span>
+        <span class="cert-pill">Est. 2014</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!-- ═══ BACK TO TOP ═══ -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+
+<script>
+/* ── NAV scroll state ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  document.getElementById('back-top').classList.toggle('show', window.scrollY > 400);
+}, { passive: true });
+
+/* ── Mobile nav ── */
+const hamburger = document.getElementById('hamburgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.toggle('open');
+});
+function closeMobileNav() { mobileNav.classList.remove('open'); }
+
+/* ── Scroll reveal ── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ── Menu tabs ── */
+function switchTab(btn, panelId) {
+  document.querySelectorAll('.menu-tab').forEach(t => {
+    t.classList.remove('active');
+    t.setAttribute('aria-selected', 'false');
+  });
+  document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  document.getElementById('panel-' + panelId).classList.add('active');
+}
+
+
+/* ── Reservation form ── */
+function submitReservation(e) {
+  e.preventDefault();
+  const form = document.getElementById('reservationForm');
+  const success = document.getElementById('formSuccess');
+  form.style.display = 'none';
+  success.style.display = 'block';
+}
+
+/* ── Set min date on date picker ── */
+const dateInput = document.getElementById('r-date');
+if (dateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.min = today;
+}
+
+/* ── Gallery hover slider ── */
+(function () {
+  const texts = document.querySelectorAll('.gallery-slide-text');
+  const imgs  = document.querySelectorAll('.gallery-slide-img');
+
+  // Split each label into animated character spans
+  texts.forEach(el => {
+    const str = el.textContent;
+    el.textContent = '';
+    let charIdx = 0;
+    str.split('').forEach(ch => {
+      if (ch === ' ') {
+        const sp = document.createElement('span');
+        sp.style.cssText = 'display:inline-block;width:0.3em;';
+        el.appendChild(sp);
+        return;
+      }
+      const wrap = document.createElement('span');
+      wrap.className = 'gs-char';
+
+      const a = document.createElement('span');
+      a.className = 'gs-char-a';
+      a.style.transitionDelay = `${charIdx * 0.025}s`;
+      a.textContent = ch;
+
+      const b = document.createElement('span');
+      b.className = 'gs-char-b';
+      b.style.transitionDelay = `${charIdx * 0.025}s`;
+      b.textContent = ch;
+
+      wrap.appendChild(a);
+      wrap.appendChild(b);
+      el.appendChild(wrap);
+      charIdx++;
+    });
+  });
+
+  function setActive(idx) {
+    texts.forEach(t => t.classList.toggle('active', +t.dataset.index === idx));
+    imgs.forEach(i  => i.classList.toggle('active',  +i.dataset.index === idx));
+  }
+
+  setActive(0); // first item visible on load
+
+  texts.forEach(el => {
+    el.addEventListener('mouseenter', () => setActive(+el.dataset.index));
+  });
+})();
+
+/* ── Hero smoke WebGL animation ── */
+(function () {
+  const FRAG = `#version 300 es
+precision highp float;
+out vec4 O;
+uniform float time;
+uniform vec2 resolution;
+uniform vec3 u_color;
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T (time+660.)
+float rnd(vec2 p){p=fract(p*vec2(12.9898,78.233));p+=dot(p,p+34.56);return fract(p.x*p.y);}
+float noise(vec2 p){vec2 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);return mix(mix(rnd(i),rnd(i+vec2(1,0)),u.x),mix(rnd(i+vec2(0,1)),rnd(i+1.),u.x),u.y);}
+float fbm(vec2 p){float t=.0,a=1.;for(int i=0;i<5;i++){t+=a*noise(p);p*=mat2(1,-1.2,.2,1.2)*2.;a*=.5;}return t;}
+void main(){
+  vec2 uv=(FC-.5*R)/R.y;
+  vec3 col=vec3(1);
+  uv.x+=.25;
+  uv*=vec2(2,1);
+  float n=fbm(uv*.28-vec2(T*.01,0));
+  n=noise(uv*3.+n*2.);
+  col.r-=fbm(uv+vec2(0,T*.015)+n);
+  col.g-=fbm(uv*1.003+vec2(0,T*.015)+n+.003);
+  col.b-=fbm(uv*1.006+vec2(0,T*.015)+n+.006);
+  col=mix(col,u_color,dot(col,vec3(.21,.71,.07)));
+  col=mix(vec3(.08),col,min(time*.1,1.));
+  col=clamp(col,.08,1.);
+  O=vec4(col,1);
+}`;
+
+  const VERT = `#version 300 es
+precision highp float;
+in vec4 position;
+void main(){gl_Position=position;}`;
+
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const gl = canvas.getContext('webgl2');
+  if (!gl) { canvas.style.display = 'none'; return; }
+
+  function makeShader(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+
+  const prog = gl.createProgram();
+  gl.attachShader(prog, makeShader(gl.VERTEX_SHADER, VERT));
+  gl.attachShader(prog, makeShader(gl.FRAGMENT_SHADER, FRAG));
+  gl.linkProgram(prog);
+
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,1,-1,-1,1,1,1,-1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+
+  const uRes   = gl.getUniformLocation(prog, 'resolution');
+  const uTime  = gl.getUniformLocation(prog, 'time');
+  const uColor = gl.getUniformLocation(prog, 'u_color');
+
+  // Brand saffron #E8531A → [0.91, 0.325, 0.102]
+  const smokeColor = new Float32Array([0.91, 0.325, 0.102]);
+
+  function resize() {
+    const dpr = Math.max(1, window.devicePixelRatio);
+    canvas.width  = canvas.clientWidth  * dpr;
+    canvas.height = canvas.clientHeight * dpr;
+    gl.viewport(0, 0, canvas.width, canvas.height);
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  function loop(now) {
+    gl.useProgram(prog);
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.uniform2f(uRes, canvas.width, canvas.height);
+    gl.uniform1f(uTime, now * 3e-3);
+    gl.uniform3fv(uColor, smokeColor);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+
+</body>
+</html>
