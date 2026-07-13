@@ -344,11 +344,11 @@ hr.ornament--light { opacity: 0.2; }
 /* ── ABOUT ── */
 #about {
   padding: 7rem 2rem;
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 5rem;
   align-items: center;
 }
 @media (max-width: 820px) {
@@ -424,6 +424,23 @@ hr.ornament--light { opacity: 0.2; }
   font-weight: 300;
   color: var(--smoke);
   line-height: 1.6;
+}
+.story-signoff {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 2.6vw, 31px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--saffron);
+  line-height: 1.35;
+  margin-top: 1.75rem;
+}
+.story-chef {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--espresso);
+  margin-top: 0.75rem;
 }
 
 /* ── CHEF ── */
@@ -756,8 +773,11 @@ hr.ornament--light { opacity: 0.2; }
 /* ── GALLERY ── */
 #gallery {
   background: var(--espresso);
-  padding: 6rem 0;
+  min-height: 100vh;
+  padding: calc(var(--nav-h) + 2rem) 0 3rem;
   overflow: hidden;
+  display: flex;
+  align-items: stretch;
 }
 #gallery .section-title {
   color: var(--cream);
@@ -765,9 +785,13 @@ hr.ornament--light { opacity: 0.2; }
   white-space: nowrap;
 }
 .gallery-inner {
-  max-width: 1100px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .gallery-header-row {
   display: flex;
@@ -776,7 +800,8 @@ hr.ornament--light { opacity: 0.2; }
   align-items: center;
   text-align: center;
   gap: 1.25rem;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
 }
 .gallery-header-row hr.ornament { margin: 0.8rem auto 0; }
 .gallery-controls {
@@ -809,8 +834,11 @@ hr.ornament--light { opacity: 0.2; }
   width: 100%;
   overflow: hidden;
   cursor: ew-resize;
-  padding: 18px 0 24px;
+  padding: 24px 0 28px;
   touch-action: pan-y;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 .gallery-track {
   display: flex;
@@ -818,8 +846,8 @@ hr.ornament--light { opacity: 0.2; }
   will-change: transform;
 }
 .gallery-card {
-  flex: 0 0 clamp(250px, 30vw, 360px);
-  height: clamp(290px, 32vw, 380px);
+  flex: 0 0 clamp(330px, 32vw, 520px);
+  height: clamp(360px, calc(100vh - 300px), 680px);
   padding: 8px;
   border: 1.5px solid rgba(244,150,42,0.6);
   border-radius: 3px;
@@ -928,10 +956,11 @@ hr.ornament--light { opacity: 0.2; }
   color: rgba(253,246,238,0.52);
 }
 @media (max-width: 760px) {
-  #gallery { padding: 5rem 0; }
-  .gallery-inner { padding: 0 1.5rem; }
+  #gallery { padding: calc(var(--nav-h) + 1rem) 0 2rem; }
+  .gallery-inner { padding: 0; }
+  .gallery-header-row { padding: 0 1.5rem; }
   #gallery .section-title { white-space: normal; }
-  .gallery-card { flex-basis: 72vw; height: 82vw; max-height: 360px; }
+  .gallery-card { flex-basis: 82vw; height: min(58vh, 520px); }
   .gallery-lb-btn { width: 44px; height: 44px; }
   .gallery-lb-prev { left: 12px; }
   .gallery-lb-next { right: 12px; }
@@ -1077,6 +1106,23 @@ hr.ornament--light { opacity: 0.2; }
   flex-direction: column;
   gap: 2.5rem;
   margin-top: 2rem;
+}
+.contact-map {
+  margin-top: 3rem;
+  border: 1px solid rgba(253,246,238,0.16);
+  background: rgba(253,246,238,0.06);
+  box-shadow: 0 18px 44px rgba(45,21,8,0.22);
+  overflow: hidden;
+}
+.contact-map iframe {
+  width: 100%;
+  min-height: 360px;
+  display: block;
+  border: 0;
+  filter: saturate(0.85) contrast(1.02);
+}
+@media (max-width: 760px) {
+  .contact-map iframe { min-height: 300px; }
 }
 .contact-block-label {
   font-size: 9px;
@@ -1414,11 +1460,22 @@ footer {
     <h2 class="section-title" id="about-title">Named after the<br><em>masala dabba.</em></h2>
     <hr class="ornament">
     <p class="body-text">
-      Masala Box is on Bell Boulevard in Bayside, Queens. We named it after the <em>masala dabba</em> — the round steel spice tin every Indian household keeps on the counter. The idea was to cook food that feels like that: familiar, precise, made with intention.
+      Masala Box is an essential tool box at the core of all Indian cooking, a round stainless steel container carrying an array of spices. It is to every Indian chef what a palette is to a painter. Traditionally it is referred to as a <em>dabba</em>, or box.
     </p>
     <p class="body-text" style="margin-top:1.25rem;">
-      We cook fresh, we balance our spices, and we don't assume everyone wants the same heat level. Pull up a chair. This is our kitchen — tonight it's yours.
+      My fondest memories growing up in our humble home were of family members gathered around for dinner, sharing bread and dishes over stories of the day. Our family history of migration took us from India, to Philippines, to Europe, to Canada, and now the US.
     </p>
+    <p class="body-text" style="margin-top:1.25rem;">
+      I found that despite regional and cultural differences, we are all intrinsically alike. Eating and drinking together is the simplest form of pure joy and affirmation of being a family, as well as connecting with friends and integrating into a community.
+    </p>
+    <p class="body-text" style="margin-top:1.25rem;">
+      It is unfortunate that the conventional understanding when it comes to Indian food is "hot and spicy." A flavorful Indian meal requires understanding of how spices work together. It is a science and an art, based on Ayurvedic principles of well-being. Every spice used in Indian cooking has health benefits that go beyond flavor and nourishment.
+    </p>
+    <p class="body-text" style="margin-top:1.25rem;">
+      The emphasis is always on freshness and flavor; "hotness" is optional. My life's journey has brought me here. We welcome you to our home. We are here to create, here to serve, and above all here to connect.
+    </p>
+    <div class="story-signoff">Khao, pio, aur jiyo<br><span style="font-size:0.62em;">Eat, drink, and live</span></div>
+    <div class="story-chef">Sumita Gohal-Verma · Executive Chef</div>
 
     <div class="about-pillars">
       <div class="about-pillar">
@@ -1923,6 +1980,13 @@ footer {
           <div class="contact-block-value">DoorDash · Uber Eats<br>Grubhub</div>
           <div class="contact-block-detail">Online ordering also available</div>
         </div>
+      </div>
+      <div class="contact-map" aria-label="Map to Masala Box">
+        <iframe
+          title="Google map to Masala Box, 4202 Bell Blvd, Bayside, NY"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Masala%20Box%204202%20Bell%20Blvd%20Bayside%20NY%2011361&output=embed"></iframe>
       </div>
     </div>
   </div>
