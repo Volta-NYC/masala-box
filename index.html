@@ -756,10 +756,14 @@ hr.ornament--light { opacity: 0.2; }
 /* ── GALLERY ── */
 #gallery {
   background: var(--espresso);
-  padding: 7rem 0;
+  padding: 6rem 0;
   overflow: hidden;
 }
-#gallery .section-title { color: var(--cream); }
+#gallery .section-title {
+  color: var(--cream);
+  margin-bottom: 0.9rem;
+  white-space: nowrap;
+}
 .gallery-inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -767,19 +771,22 @@ hr.ornament--light { opacity: 0.2; }
 }
 .gallery-header-row {
   display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
 }
+.gallery-header-row hr.ornament { margin: 0.8rem auto 0; }
 .gallery-controls {
   display: flex;
   gap: 0.75rem;
-  flex-shrink: 0;
+  justify-content: center;
 }
 .gallery-control {
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -802,7 +809,8 @@ hr.ornament--light { opacity: 0.2; }
   width: 100%;
   overflow: hidden;
   cursor: ew-resize;
-  padding: 14px 0 20px;
+  padding: 18px 0 24px;
+  touch-action: pan-y;
 }
 .gallery-track {
   display: flex;
@@ -810,15 +818,15 @@ hr.ornament--light { opacity: 0.2; }
   will-change: transform;
 }
 .gallery-card {
-  flex: 0 0 clamp(260px, 34vw, 420px);
-  height: clamp(300px, 38vw, 460px);
-  padding: 10px;
-  border: 2px solid rgba(244,150,42,0.72);
-  border-radius: 4px;
+  flex: 0 0 clamp(250px, 30vw, 360px);
+  height: clamp(290px, 32vw, 380px);
+  padding: 8px;
+  border: 1.5px solid rgba(244,150,42,0.6);
+  border-radius: 3px;
   overflow: visible;
   position: relative;
-  background: linear-gradient(135deg, rgba(244,150,42,0.22), rgba(232,83,26,0.14));
-  box-shadow: 0 18px 38px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(253,246,238,0.18);
+  background: rgba(253,246,238,0.035);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.22), inset 0 0 0 1px rgba(253,246,238,0.12);
   cursor: zoom-in;
 }
 .gallery-card::before,
@@ -853,8 +861,6 @@ hr.ornament--light { opacity: 0.2; }
   z-index: 1;
 }
 .gallery-card:hover img { transform: scale(1.035); }
-.gallery-card:nth-child(3n) { height: clamp(260px, 32vw, 400px); }
-.gallery-card:nth-child(4n) { flex-basis: clamp(300px, 40vw, 480px); }
 .gallery-lightbox {
   display: none;
   position: fixed;
@@ -924,8 +930,8 @@ hr.ornament--light { opacity: 0.2; }
 @media (max-width: 760px) {
   #gallery { padding: 5rem 0; }
   .gallery-inner { padding: 0 1.5rem; }
-  .gallery-header-row { align-items: flex-start; flex-direction: column; }
-  .gallery-card { flex-basis: 78vw; height: 92vw; max-height: 420px; }
+  #gallery .section-title { white-space: normal; }
+  .gallery-card { flex-basis: 72vw; height: 82vw; max-height: 360px; }
   .gallery-lb-btn { width: 44px; height: 44px; }
   .gallery-lb-prev { left: 12px; }
   .gallery-lb-next { right: 12px; }
@@ -976,11 +982,12 @@ hr.ornament--light { opacity: 0.2; }
   .review-card:nth-child(2), .review-card:nth-child(3) { grid-column: 1; }
 }
 .review-text {
-  font-size: 13px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 1.8vw, 25px);
   font-weight: 300;
-  color: var(--bark);
-  line-height: 1.75;
-  margin-bottom: 0.85rem;
+  color: var(--espresso);
+  line-height: 1.48;
+  margin-bottom: 1.15rem;
   font-style: italic;
 }
 .review-author {
@@ -1054,8 +1061,8 @@ hr.ornament--light { opacity: 0.2; }
 
 /* ── CONTACT ── */
 #contact {
-  background: var(--espresso);
-  padding: 7rem 2rem;
+  background: linear-gradient(135deg, var(--bark), var(--crimson));
+  padding: 5rem 2rem;
 }
 .contact-inner {
   max-width: 1100px;
@@ -1227,7 +1234,7 @@ hr.ornament--light { opacity: 0.2; }
 footer {
   background: var(--espresso);
   border-top: 0.5px solid rgba(244,150,42,0.12);
-  padding: 4rem 2rem 2rem;
+  padding: 1.75rem 2rem 1rem;
 }
 .footer-inner {
   max-width: 1100px;
@@ -1235,47 +1242,43 @@ footer {
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 4rem;
+  grid-template-columns: 1.25fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 @media (max-width: 820px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
 @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } }
-.footer-brand img { width: 48px; margin-bottom: 1rem; border-radius: 50%; box-shadow: 0 0 0 1px rgba(232,83,26,0.25); }
+.footer-brand img { width: 34px; margin-bottom: 0.55rem; border-radius: 50%; box-shadow: 0 0 0 1px rgba(232,83,26,0.25); }
 .footer-brand-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
   color: var(--cream);
   margin-bottom: 0.4rem;
 }
 .footer-brand-sub {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 300;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(253,246,238,0.3);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 .footer-brand-desc {
-  font-size: 12px;
-  font-weight: 300;
-  color: rgba(253,246,238,0.35);
-  line-height: 1.7;
-  max-width: 240px;
+  display: none;
 }
 .footer-col-title {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ember);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.8rem;
   display: block;
 }
-.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
 .footer-links a {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 300;
   color: rgba(253,246,238,0.45);
   text-decoration: none;
@@ -1283,7 +1286,7 @@ footer {
 }
 .footer-links a:hover { color: var(--ember); }
 .footer-bottom {
-  padding-top: 2rem;
+  padding-top: 0.9rem;
   border-top: 0.5px solid rgba(253,246,238,0.08);
   display: flex;
   justify-content: space-between;
@@ -1292,7 +1295,7 @@ footer {
   gap: 1rem;
 }
 .footer-copy {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 300;
   color: rgba(253,246,238,0.2);
   letter-spacing: 0.08em;
@@ -1818,7 +1821,7 @@ footer {
     <div class="reveal">
       <div class="gallery-header-row">
         <div>
-          <h2 class="section-title" id="gallery-title">Look before<br>you eat.</h2>
+          <h2 class="section-title" id="gallery-title">Look before you eat.</h2>
           <hr class="ornament ornament--light">
         </div>
         <div class="gallery-controls" aria-label="Browse gallery">
@@ -2038,7 +2041,7 @@ if (dateInput) {
   dateInput.min = today;
 }
 
-/* ── Gallery carousel + lightbox ── */
+/* ── Infinite gallery carousel + lightbox ── */
 (function () {
   const wrap = document.querySelector('.gallery-track-wrap');
   const track = document.getElementById('gallery-track');
@@ -2047,10 +2050,36 @@ if (dateInput) {
   const lightbox = document.getElementById('gallery-lightbox');
   const lightboxImg = document.getElementById('gallery-lb-img');
   const lightboxCounter = document.getElementById('gallery-lb-counter');
-  const cards = Array.from(document.querySelectorAll('.gallery-card img'));
+  const originalCards = Array.from(document.querySelectorAll('.gallery-card'));
+  const originalImages = originalCards.map(card => card.querySelector('img'));
   let current = 0;
 
-  if (!wrap || !track || !cards.length) return;
+  if (!wrap || !track || !originalCards.length) return;
+
+  track.prepend(...originalCards.map(card => card.cloneNode(true)));
+  track.append(...originalCards.map(card => card.cloneNode(true)));
+
+  let currentX = 0;
+  let targetX = 0;
+  let singleSetWidth = 0;
+  let isDragging = false;
+  let startX = 0;
+  let startTarget = 0;
+  let dragDistance = 0;
+  let pausedUntil = 0;
+  const autoSpeed = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 0.42;
+
+  function measure() {
+    const styles = window.getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap || styles.gap || '20') || 20;
+    singleSetWidth = originalCards.reduce((sum, card) => sum + card.offsetWidth + gap, 0);
+    targetX = singleSetWidth;
+    currentX = singleSetWidth;
+    track.style.transform = `translateX(${-currentX}px)`;
+  }
+
+  requestAnimationFrame(measure);
+  window.addEventListener('resize', measure, { passive: true });
 
   function cardDistance() {
     const card = track.querySelector('.gallery-card');
@@ -2061,36 +2090,64 @@ if (dateInput) {
   }
 
   function moveBy(direction) {
-    wrap.scrollBy({ left: direction * cardDistance(), behavior: 'smooth' });
+    pausedUntil = Date.now() + 1600;
+    targetX += direction * cardDistance();
   }
 
   prevBtn?.addEventListener('click', () => moveBy(-1));
   nextBtn?.addEventListener('click', () => moveBy(1));
 
-  let isDragging = false;
-  let startX = 0;
-  let startScroll = 0;
+  wrap.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    pausedUntil = Date.now() + 900;
+    targetX += (Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY) * 0.9;
+  }, { passive: false });
 
   wrap.addEventListener('pointerdown', (event) => {
     isDragging = true;
     startX = event.clientX;
-    startScroll = wrap.scrollLeft;
+    startTarget = targetX;
+    dragDistance = 0;
+    pausedUntil = Date.now() + 1400;
     wrap.setPointerCapture(event.pointerId);
   });
 
   wrap.addEventListener('pointermove', (event) => {
     if (!isDragging) return;
-    wrap.scrollLeft = startScroll - (event.clientX - startX);
+    dragDistance = Math.max(dragDistance, Math.abs(event.clientX - startX));
+    targetX = startTarget - (event.clientX - startX);
   });
 
   wrap.addEventListener('pointerup', () => { isDragging = false; });
   wrap.addEventListener('pointercancel', () => { isDragging = false; });
 
+  function normalize() {
+    if (!singleSetWidth) return;
+    if (currentX >= singleSetWidth * 2) {
+      currentX -= singleSetWidth;
+      targetX -= singleSetWidth;
+    }
+    if (currentX < singleSetWidth * 0.5) {
+      currentX += singleSetWidth;
+      targetX += singleSetWidth;
+    }
+  }
+
+  (function animateGallery() {
+    if (autoSpeed && !isDragging && Date.now() > pausedUntil) {
+      targetX += autoSpeed;
+    }
+    currentX += (targetX - currentX) * 0.09;
+    normalize();
+    track.style.transform = `translateX(${-currentX}px)`;
+    requestAnimationFrame(animateGallery);
+  })();
+
   function show(index) {
-    current = (index + cards.length) % cards.length;
-    lightboxImg.src = cards[current].src;
-    lightboxImg.alt = cards[current].alt;
-    lightboxCounter.textContent = `${current + 1} / ${cards.length}`;
+    current = (index + originalImages.length) % originalImages.length;
+    lightboxImg.src = originalImages[current].src;
+    lightboxImg.alt = originalImages[current].alt;
+    lightboxCounter.textContent = `${current + 1} / ${originalImages.length}`;
     lightboxImg.style.animation = 'none';
     requestAnimationFrame(() => { lightboxImg.style.animation = ''; });
   }
@@ -2108,10 +2165,10 @@ if (dateInput) {
     document.body.style.overflow = '';
   }
 
-  cards.forEach((img, index) => {
+  Array.from(track.querySelectorAll('.gallery-card img')).forEach((img, index) => {
     img.parentElement.addEventListener('click', () => {
-      if (Math.abs(wrap.scrollLeft - startScroll) > 8) return;
-      open(index);
+      if (dragDistance > 8) return;
+      open(index % originalImages.length);
     });
   });
 
