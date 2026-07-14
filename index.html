@@ -719,24 +719,40 @@ hr.ornament--light { opacity: 0.2; }
 }
 .menu-heading-row {
   display: flex;
-  align-items: flex-end;
-  gap: 1.25rem;
+  align-items: center;
+  gap: 2.5rem;
   flex-wrap: wrap;
+  width: 100%;
 }
-.menu-cert-badge {
+.menu-heading-row .section-title {
+  margin-bottom: 0;
+}
+.badge.menu-cert-badge {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 0.6rem;
-  border: 0.5px solid rgba(244,150,42,0.28);
-  padding: 8px 14px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 0;
+  border: 0.75px solid rgba(244,150,42,0.42);
+  padding: 13px 20px;
   border-radius: 999px;
-  font-size: 11px;
-  letter-spacing: 0.16em;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  line-height: 1;
   white-space: nowrap;
+  box-shadow: 0 12px 28px rgba(45,21,8,0.08);
 }
 @media (max-width: 760px) {
-  .menu-heading-row { align-items: flex-start; }
-  .menu-cert-badge { margin-bottom: 0; }
+  .menu-heading-row {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .badge.menu-cert-badge {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 12px;
+    padding: 11px 16px;
+  }
 }
 .badge {
   font-size: 9px;
