@@ -717,14 +717,26 @@ hr.ornament--light { opacity: 0.2; }
   gap: 0.4rem;
   flex-wrap: wrap;
 }
-.menu-cert-row {
-  margin: 1.2rem 0 2rem;
+.menu-heading-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
-.menu-cert-row .badge {
+.menu-cert-badge {
   display: inline-flex;
   align-items: center;
+  margin-bottom: 0.6rem;
   border: 0.5px solid rgba(244,150,42,0.28);
-  padding: 6px 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .menu-heading-row { align-items: flex-start; }
+  .menu-cert-badge { margin-bottom: 0; }
 }
 .badge {
   font-size: 9px;
@@ -1660,7 +1672,10 @@ footer {
 <section id="menu" aria-labelledby="menu-title">
   <div class="reveal">
     <span class="section-label">The Menu</span>
-    <h2 class="section-title" id="menu-title">What we cook<br>for you tonight.</h2>
+    <div class="menu-heading-row">
+      <h2 class="section-title" id="menu-title">What we cook<br>for you tonight.</h2>
+      <span class="badge badge--halal menu-cert-badge">Halal Certified Restaurant</span>
+    </div>
   </div>
 
   <div class="menu-tabs" role="tablist" aria-label="Menu categories">
@@ -1671,10 +1686,6 @@ footer {
     <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'breads')">Breads & Sides</button>
     <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'sweets')">Drinks & Sweets</button>
   </div>
-  <div class="menu-cert-row">
-    <span class="badge badge--halal">Halal Certified Restaurant</span>
-  </div>
-
   <!-- TAPAS -->
   <div class="menu-panel active" id="panel-tapas">
     <div class="menu-grid">
