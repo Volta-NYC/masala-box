@@ -1193,36 +1193,78 @@ hr.ornament--light { opacity: 0.2; }
   color: var(--cream);
   line-height: 1.4;
 }
-.order-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 0.15rem;
+.order-section {
+  background: var(--parchment);
+  padding: 6rem 2rem;
+  border-top: 0.5px solid rgba(45,21,8,0.08);
+  scroll-margin-top: var(--nav-h);
 }
-.order-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 34px;
-  padding: 7px 12px;
-  border: 1px solid rgba(253,246,238,0.28);
-  border-radius: 3px;
-  background: rgba(253,246,238,0.08);
-  color: var(--cream);
-  font-family: 'DM Sans', sans-serif;
+.order-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.order-header {
+  max-width: 680px;
+  margin-bottom: 2.75rem;
+}
+.order-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.order-card {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border: 1px solid rgba(45,21,8,0.12);
+  border-radius: 6px;
+  background: rgba(253,246,238,0.62);
+  text-decoration: none;
+  color: var(--espresso);
+  box-shadow: 0 14px 34px rgba(45,21,8,0.08);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.order-card:hover,
+.order-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(232,83,26,0.45);
+  box-shadow: 0 18px 42px rgba(45,21,8,0.13);
+}
+.order-card-platform {
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  text-decoration: none;
-  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  color: var(--saffron);
+  margin-bottom: 0.75rem;
+  display: block;
 }
-.order-link:hover,
-.order-link:focus-visible {
-  background: var(--ember);
-  border-color: var(--ember);
-  color: var(--espresso);
-  transform: translateY(-2px);
+.order-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 0.8rem;
+}
+.order-card-copy {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--smoke);
+  line-height: 1.65;
+}
+.order-card-action {
+  margin-top: 1.5rem;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--crimson);
+}
+@media (max-width: 820px) {
+  .order-grid { grid-template-columns: 1fr; }
+  .order-section { padding: 5rem 1.5rem; }
 }
 .contact-block-detail {
   font-size: 12px;
@@ -1489,7 +1531,7 @@ footer {
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="https://www.grubhub.com/restaurant/masala-box-4202-bell-blvd-new-york/296289" class="nav-cta" target="_blank" rel="noopener">Order Now</a></li>
+    <li><a href="#order" class="nav-cta">Order Now</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -1503,7 +1545,7 @@ footer {
   <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
   <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
   <a href="#contact" onclick="closeMobileNav()">Contact Us</a>
-  <a href="https://www.grubhub.com/restaurant/masala-box-4202-bell-blvd-new-york/296289" style="color:var(--ember)" target="_blank" rel="noopener">Order Now</a>
+  <a href="#order" onclick="closeMobileNav()" style="color:var(--ember)">Order Now</a>
 </div>
 
 
@@ -2034,6 +2076,47 @@ footer {
 
 
 
+<!-- ═══ ORDER ═══ -->
+<section id="order" class="order-section" aria-labelledby="order-title">
+  <div class="order-inner">
+    <div class="order-header reveal">
+      <span class="section-label">Order Online</span>
+      <h2 class="section-title" id="order-title">Bring Masala Box<br>to your table.</h2>
+      <p class="body-text">Order delivery or pickup from verified online ordering pages, or call the restaurant directly for pickup, gift cards, and quick questions.</p>
+    </div>
+
+    <div class="order-grid">
+      <a class="order-card reveal" href="https://www.grubhub.com/restaurant/masala-box-4202-bell-blvd-new-york/296289" target="_blank" rel="noopener">
+        <div>
+          <span class="order-card-platform">Delivery &amp; Pickup</span>
+          <div class="order-card-title">Grubhub</div>
+          <p class="order-card-copy">Order the full menu online from Masala Box at 4202 Bell Blvd.</p>
+        </div>
+        <span class="order-card-action">Order on Grubhub</span>
+      </a>
+
+      <a class="order-card reveal" href="https://postmates.com/store/masala-box/-CqJ4k-2X1aaqlgnTFGN_w" target="_blank" rel="noopener">
+        <div>
+          <span class="order-card-platform">Delivery</span>
+          <div class="order-card-title">Postmates</div>
+          <p class="order-card-copy">Browse popular dishes and schedule delivery from the Bayside kitchen.</p>
+        </div>
+        <span class="order-card-action">Order on Postmates</span>
+      </a>
+
+      <a class="order-card reveal" href="tel:+17185550142">
+        <div>
+          <span class="order-card-platform">Direct</span>
+          <div class="order-card-title">Call Masala Box</div>
+          <p class="order-card-copy">Prefer to order direct? Call the restaurant for pickup and availability.</p>
+        </div>
+        <span class="order-card-action">Call to Order</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 <!-- ═══ CONTACT ═══ -->
 <section id="contact" aria-labelledby="contact-title">
   <div class="contact-inner" style="grid-template-columns:1fr;">
@@ -2060,14 +2143,6 @@ footer {
             <span class="hours-day">Saturday</span><div class="hours-dot"></div><span class="hours-time">11am – 11pm</span>
             <span class="hours-day">Sunday</span><div class="hours-dot"></div><span class="hours-time">11am – 9pm</span>
           </div>
-        </div>
-        <div>
-          <span class="contact-block-label">Order &amp; Delivery</span>
-          <div class="order-links" aria-label="Order Masala Box online">
-            <a class="order-link" href="https://www.grubhub.com/restaurant/masala-box-4202-bell-blvd-new-york/296289" target="_blank" rel="noopener">Grubhub</a>
-            <a class="order-link" href="https://postmates.com/store/masala-box/-CqJ4k-2X1aaqlgnTFGN_w" target="_blank" rel="noopener">Postmates</a>
-          </div>
-          <div class="contact-block-detail">Tap a service to order online.</div>
         </div>
       </div>
       <div class="contact-map" aria-label="Map to Masala Box">
@@ -2106,6 +2181,7 @@ footer {
         <ul class="footer-links">
           <li><a href="#contact">Hours &amp; Location</a></li>
           <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#order">Order Online</a></li>
           <li><a href="tel:+17185550142">Call for Gift Cards</a></li>
         </ul>
       </div>
