@@ -1655,84 +1655,128 @@ footer {
   </div>
 
   <div class="menu-tabs" role="tablist" aria-label="Menu categories">
-    <button class="menu-tab active" role="tab" aria-selected="true" onclick="switchTab(this,'starters')">Starters</button>
+    <button class="menu-tab active" role="tab" aria-selected="true" onclick="switchTab(this,'tapas')">Tapas</button>
     <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'mains')">Mains</button>
-    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'biryani')">Biryani</button>
-    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'breads')">Breads</button>
-    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'desserts')">Desserts</button>
-    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'drinks')">Drinks</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'vegetarian')">Vegetarian</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'rice')">Rice</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'breads')">Breads & Sides</button>
+    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'sweets')">Drinks & Sweets</button>
   </div>
 
-  <!-- STARTERS -->
-  <div class="menu-panel active" id="panel-starters">
+  <!-- TAPAS -->
+  <div class="menu-panel active" id="panel-tapas">
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Lamb Chops Tikka</div>
-          <div class="menu-item-price">$24</div>
+          <div class="menu-item-name">Calamari</div>
+          <div class="menu-item-price">$16</div>
         </div>
-        <p class="menu-item-desc">Rack of lamb slow-marinated in garam masala, yogurt, and ginger — char-kissed on the grill. Each one a small ceremony.</p>
+        <p class="menu-item-desc">Fried calamari tossed with South Indian spices.</p>
         <div class="menu-item-badges">
           <span class="badge badge--halal">Halal</span>
-          <span class="badge badge--chef">Chef's Pick</span>
           <span class="badge badge--spicy">Medium</span>
         </div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Samosa Chaat</div>
-          <div class="menu-item-price">$14</div>
+          <div class="menu-item-name">Chicken Kebab Platter</div>
+          <div class="menu-item-price">$16</div>
         </div>
-        <p class="menu-item-desc">Crisp hand-folded samosas on a bed of spiced chickpeas, tamarind chutney, whipped yogurt, and chaat masala.</p>
+        <p class="menu-item-desc">Grilled chicken breast and ground meat marinated with ginger, garlic, yogurt, and mild spices.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--veg">Vegetarian</span>
           <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--spicy">Mild</span>
         </div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Gilafi Seekh Kebab</div>
-          <div class="menu-item-price">$19</div>
+          <div class="menu-item-name">Amritsari Fish Pakoras</div>
+          <div class="menu-item-price">$14</div>
         </div>
-        <p class="menu-item-desc">Hand-minced lamb and beef seekh kebab wrapped in bell pepper and onion, skewered over open coal. Served with mint raita.</p>
+        <p class="menu-item-desc">Zesty marinated fish fritters named for the city where the dish originated.</p>
         <div class="menu-item-badges">
           <span class="badge badge--halal">Halal</span>
-          <span class="badge badge--spicy">Mild</span>
+          <span class="badge badge--spicy">Medium</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Chicken 65</div>
+          <div class="menu-item-price">$14</div>
+        </div>
+        <p class="menu-item-desc">Spicy stir-fried chicken with peppers and South Indian seasoning.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--spicy">Spicy</span>
         </div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Paneer Tikka</div>
-          <div class="menu-item-price">$17</div>
-        </div>
-        <p class="menu-item-desc">House-pressed paneer in a saffron-turmeric marinade, skewered with peppers and onion, finished in the tandoor.</p>
-        <div class="menu-item-badges">
-          <span class="badge badge--veg">Vegetarian</span>
-          <span class="badge badge--gf">Gluten Free</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <div class="menu-item-name">Dahi Puri</div>
           <div class="menu-item-price">$12</div>
         </div>
-        <p class="menu-item-desc">Hollow semolina shells filled with spiced potato, chickpeas, and tamarind water. Best eaten in one delicious bite.</p>
+        <p class="menu-item-desc">Pan-grilled fresh paneer marinated in tandoori spices.</p>
         <div class="menu-item-badges">
           <span class="badge badge--veg">Vegetarian</span>
-          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--gf">Gluten Free</span>
         </div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Chicken Malai Tikka</div>
-          <div class="menu-item-price">$18</div>
+          <div class="menu-item-name">Vegetable Pakoras</div>
+          <div class="menu-item-price">$12</div>
         </div>
-        <p class="menu-item-desc">Tender chicken breast in a cream-and-cashew marinade with cardamom and white pepper. Very mild heat.</p>
+        <p class="menu-item-desc">Zesty mixed vegetable fritters.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
-          <span class="badge badge--spicy">Mild</span>
-          <span class="badge badge--gf">Gluten Free</span>
+          <span class="badge badge--veg">Vegetarian</span>
         </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Kheema Flutes</div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <p class="menu-item-desc">Crisp flutes filled with spiced minced meat.</p>
+        <div class="menu-item-badges"><span class="badge badge--halal">Halal</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Bombay Frankie</div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <p class="menu-item-desc">Kati roll style wrap with Masala Box spice and chutney.</p>
+        <div class="menu-item-badges"><span class="badge badge--chef">Popular</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Gobi Phataka</div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <p class="menu-item-desc">Cauliflower tossed with bold spices and a little heat.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--spicy">Spicy</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Samosas</div>
+          <div class="menu-item-price">$9</div>
+        </div>
+        <p class="menu-item-desc">Crisp pastry filled with spiced potatoes and peas.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Samosa Chaat</div>
+          <div class="menu-item-price">$7</div>
+        </div>
+        <p class="menu-item-desc">Samosa layered with chaat toppings and chutneys.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Mulligatawny Soup</div>
+          <div class="menu-item-price">$7+</div>
+        </div>
+        <p class="menu-item-desc">A warming South Indian-inspired soup.</p>
       </div>
     </div>
   </div>
@@ -1742,22 +1786,44 @@ footer {
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Butter Chicken</div>
-          <div class="menu-item-price">$26</div>
+          <div class="menu-item-name">Chicken Tikka Masala</div>
+          <div class="menu-item-price">$22</div>
         </div>
-        <p class="menu-item-desc">Tandoor-roasted chicken in a slow-reduced tomato and cream sauce with fenugreek and a finishing spoon of cultured butter.</p>
+        <p class="menu-item-desc">Grilled white meat cooked in a savory creamy tomato sauce, served with rice.</p>
         <div class="menu-item-badges">
           <span class="badge badge--halal">Halal</span>
-          <span class="badge badge--chef">Chef's Pick</span>
+          <span class="badge badge--chef">Popular</span>
           <span class="badge badge--spicy">Mild</span>
         </div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Lamb Rogan Josh</div>
-          <div class="menu-item-price">$28</div>
+          <div class="menu-item-name">Chicken Korma</div>
+          <div class="menu-item-price">$22</div>
         </div>
-        <p class="menu-item-desc">Heritage-breed lamb braised for four hours in Kashmiri aromatics — fennel, dried ginger, and Ratan Jot for the color. Served with basmati.</p>
+        <p class="menu-item-desc">Chicken cooked in a creamy, gently spiced korma sauce, served with rice.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--spicy">Mild</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Chicken Saag</div>
+          <div class="menu-item-price">$20</div>
+        </div>
+        <p class="menu-item-desc">Lightly creamed spinach sauteed with ginger and garlic, served with rice.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--gf">Gluten Free</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Southern Indian Chicken Curry</div>
+          <div class="menu-item-price">$22</div>
+        </div>
+        <p class="menu-item-desc">Chicken curry with Southern Indian seasoning, served with rice.</p>
         <div class="menu-item-badges">
           <span class="badge badge--halal">Halal</span>
           <span class="badge badge--spicy">Medium</span>
@@ -1765,233 +1831,404 @@ footer {
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Dal Makhani</div>
-          <div class="menu-item-price">$19</div>
+          <div class="menu-item-name">Lamb Korma</div>
+          <div class="menu-item-price">$26</div>
         </div>
-        <p class="menu-item-desc">Black lentils slow-cooked overnight with tomatoes, cream, and a touch of smoked butter. Vegetarian soul food.</p>
+        <p class="menu-item-desc">Lamb cooked in a creamy, gently spiced korma sauce, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--veg">Vegetarian</span>
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--spicy">Mild</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Lamb Saag</div>
+          <div class="menu-item-price">$26</div>
+        </div>
+        <p class="menu-item-desc">Lamb with lightly creamed spinach, ginger, and garlic, served with rice.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--gf">Gluten Free</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Masala Shrimp</div>
+          <div class="menu-item-price">$22</div>
+        </div>
+        <p class="menu-item-desc">Sauteed shrimp cooked in tomato and coconut milk sauce, served with rice.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--gf">Gluten Free</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Fish Pondicherry</div>
+          <div class="menu-item-price">$22</div>
+        </div>
+        <p class="menu-item-desc">Sliced fish cooked in a zesty coconut milk and green mango sauce, served with rice.</p>
+        <div class="menu-item-badges">
+          <span class="badge badge--halal">Halal</span>
+          <span class="badge badge--gf">Gluten Free</span>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Homestyle Curry</div>
+          <div class="menu-item-price">$22+</div>
+        </div>
+        <p class="menu-item-desc">Choice of protein in homestyle curry, served with rice.</p>
+        <div class="menu-item-badges">
           <span class="badge badge--halal">Halal</span>
         </div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Saag Paneer</div>
-          <div class="menu-item-price">$21</div>
+          <div class="menu-item-name">Vindaloo</div>
+          <div class="menu-item-price">$22+</div>
         </div>
-        <p class="menu-item-desc">Fresh spinach and mustard greens with house-pressed paneer, finished with ghee-tempered garlic and cumin. Deeply comforting.</p>
-        <div class="menu-item-badges">
-          <span class="badge badge--veg">Vegetarian</span>
-          <span class="badge badge--gf">Gluten Free</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <div class="menu-item-name">Prawn Masala</div>
-          <div class="menu-item-price">$29</div>
-        </div>
-        <p class="menu-item-desc">Atlantic prawns in a coastal Goan-inspired tomato, coconut, and tamarind masala with curry leaves and mustard oil.</p>
+        <p class="menu-item-desc">Choice of protein in a tangy, spicy vindaloo sauce, served with rice.</p>
         <div class="menu-item-badges">
           <span class="badge badge--halal">Halal</span>
-          <span class="badge badge--spicy">Medium</span>
-          <span class="badge badge--gf">Gluten Free</span>
+          <span class="badge badge--spicy">Spicy</span>
         </div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Chana Masala</div>
-          <div class="menu-item-price">$18</div>
+          <div class="menu-item-name">Kheema Mutter</div>
+          <div class="menu-item-price">$22</div>
         </div>
-        <p class="menu-item-desc">Punjab-style chickpeas in a bold, tangy tomato-onion sauce with amchur and house-blend chana masala. Hearty and bright.</p>
+        <p class="menu-item-desc">Ground meat and peas cooked with aromatic spices, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--veg">Vegetarian</span>
-          <span class="badge badge--veg">Vegan</span>
-          <span class="badge badge--gf">Gluten Free</span>
+          <span class="badge badge--halal">Halal</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- BIRYANI -->
-  <div class="menu-panel" id="panel-biryani">
-    <p class="body-text" style="margin-bottom:2rem;">Our biryanis are prepared using the traditional <em>dum pukht</em> method — sealed under dough and slow-cooked to let the steam do its work. Served with raita and salan.</p>
+  <!-- VEGETARIAN -->
+  <div class="menu-panel" id="panel-vegetarian">
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Gosht Dum Biryani</div>
-          <div class="menu-item-price">$32</div>
+          <div class="menu-item-name">Paneer Makhani</div>
+          <div class="menu-item-price">$18</div>
         </div>
-        <p class="menu-item-desc">Slow-braised bone-in lamb with aged basmati, saffron, caramelized onions, and fried shallots. Sealed and finished in the oven.</p>
-        <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
-          <span class="badge badge--chef">Chef's Pick</span>
-          <span class="badge badge--spicy">Medium</span>
+        <p class="menu-item-desc">Paneer cooked in a rich, creamy tomato makhani sauce.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--spicy">Mild</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Saag</div>
+          <div class="menu-item-price">$16</div>
         </div>
+        <p class="menu-item-desc">Diced soft paneer with lightly creamed spinach, ginger, and garlic. Channa saag vegan option available.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--chef">Popular</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Aloo Gobi</div>
+          <div class="menu-item-price">$16</div>
+        </div>
+        <p class="menu-item-desc">Potatoes and cauliflower cooked with Indian spices.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Paneer Mutter</div>
+          <div class="menu-item-price">$16</div>
+        </div>
+        <p class="menu-item-desc">Paneer and peas cooked in a spiced sauce.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Malai Kofta</div>
+          <div class="menu-item-price">$16</div>
+        </div>
+        <p class="menu-item-desc">Vegetable dumplings served in a creamy sauce.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Baigan Bhurta</div>
+          <div class="menu-item-price">$16</div>
+        </div>
+        <p class="menu-item-desc">Roasted eggplant cooked down with spices.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Vegetable Korma</div>
+          <div class="menu-item-price">$16</div>
+        </div>
+        <p class="menu-item-desc">Mixed vegetables cooked in a creamy korma sauce.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--spicy">Mild</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Punjabi Chole</div>
+          <div class="menu-item-price">$14</div>
+        </div>
+        <p class="menu-item-desc">Chickpeas cooked Punjabi style with a warm spice blend.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--veg">Vegan</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Bundgobi Mutter</div>
+          <div class="menu-item-price">$14</div>
+        </div>
+        <p class="menu-item-desc">Cabbage and peas cooked with spices.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Makhani Dal</div>
+          <div class="menu-item-price">$14</div>
+        </div>
+        <p class="menu-item-desc">Slow-cooked lentils in a makhani-style sauce.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Lasooni Dal</div>
+          <div class="menu-item-price">$14</div>
+        </div>
+        <p class="menu-item-desc">Garlic-forward dal with a comforting finish.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RICE -->
+  <div class="menu-panel" id="panel-rice">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Lamb Biryani</div>
+          <div class="menu-item-price">$26</div>
+        </div>
+        <p class="menu-item-desc">Lamb and rice prepared biryani style with fragrant spices.</p>
+        <div class="menu-item-badges"><span class="badge badge--halal">Halal</span></div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Chicken Biryani</div>
-          <div class="menu-item-price">$26</div>
-        </div>
-        <p class="menu-item-desc">Marinated chicken thigh with Hyderabadi spices, rose water, and long-grain basmati. Fragrant and rich from first bite to last.</p>
-        <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
-          <span class="badge badge--spicy">Mild</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <div class="menu-item-name">Vegetable Dum Biryani</div>
           <div class="menu-item-price">$22</div>
         </div>
-        <p class="menu-item-desc">Seasonal vegetables layered with saffron milk, crispy shallots, mint, and aged basmati.</p>
-        <div class="menu-item-badges">
-          <span class="badge badge--veg">Vegetarian</span>
-          <span class="badge badge--gf">Gluten Free</span>
-        </div>
+        <p class="menu-item-desc">Chicken and rice prepared biryani style with fragrant spices.</p>
+        <div class="menu-item-badges"><span class="badge badge--halal">Halal</span></div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Prawn Biryani</div>
-          <div class="menu-item-price">$34</div>
+          <div class="menu-item-name">Vegetable Biryani</div>
+          <div class="menu-item-price">$14</div>
         </div>
-        <p class="menu-item-desc">Coastal-inspired biryani with tiger prawns in a light coconut and saffron broth, layered with fresh coriander and curry leaves.</p>
-        <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
-          <span class="badge badge--spicy">Mild</span>
-          <span class="badge badge--chef">Seasonal</span>
+        <p class="menu-item-desc">Vegetables and rice prepared biryani style with fragrant spices.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Khasta Noodles</div>
+          <div class="menu-item-price">$14+</div>
         </div>
+        <p class="menu-item-desc">Crisp, saucy noodles with choice of preparation.</p>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">White Rice</div>
+          <div class="menu-item-price">$3</div>
+        </div>
+        <p class="menu-item-desc">Steamed white rice.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegan</span><span class="badge badge--gf">Gluten Free</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Brown Rice</div>
+          <div class="menu-item-price">$3</div>
+        </div>
+        <p class="menu-item-desc">Steamed brown rice.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegan</span><span class="badge badge--gf">Gluten Free</span></div>
       </div>
     </div>
   </div>
 
-  <!-- BREADS -->
+  <!-- BREADS & SIDES -->
   <div class="menu-panel" id="panel-breads">
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Tandoori Roti</div>
-          <div class="menu-item-price">$4</div>
+          <div class="menu-item-name">Stuffed Naan</div>
+          <div class="menu-item-price">$5</div>
         </div>
-        <p class="menu-item-desc">Whole wheat flatbread baked directly on the inner wall of our tandoor. Slight char, clean flavour — the honest bread.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+        <p class="menu-item-desc">Choice of paneer, cheese, or garlic.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--chef">Popular</span></div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Peshwari Naan</div>
-          <div class="menu-item-price">$7</div>
-        </div>
-        <p class="menu-item-desc">Soft leavened bread stuffed with coconut, almonds, and sultanas. A sweet counterpoint to bold curries.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <div class="menu-item-name">Garlic Butter Naan</div>
-          <div class="menu-item-price">$6</div>
-        </div>
-        <p class="menu-item-desc">Classic leavened naan from the tandoor, finished with roasted garlic compound butter and fresh coriander.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <div class="menu-item-name">Paratha</div>
-          <div class="menu-item-price">$6</div>
-        </div>
-        <p class="menu-item-desc">Layered whole wheat flatbread with ghee folded in. Flaky, crisp-edged, and perfect for scooping every last bit of sauce.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DESSERTS -->
-  <div class="menu-panel" id="panel-desserts">
-    <div class="menu-grid">
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <div class="menu-item-name">Gulab Jamun</div>
-          <div class="menu-item-price">$10</div>
-        </div>
-        <p class="menu-item-desc">Soft milk-solid dumplings soaked in rose and cardamom syrup, served warm with pistachio ice cream.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--chef">Classic</span></div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <div class="menu-item-name">Mango Kulfi</div>
-          <div class="menu-item-price">$9</div>
-        </div>
-        <p class="menu-item-desc">Dense, slowly-frozen Indian ice cream made with Alphonso mango, condensed milk, and saffron. Served on a stick.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span></div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <div class="menu-item-name">Shahi Tukda</div>
-          <div class="menu-item-price">$11</div>
-        </div>
-        <p class="menu-item-desc">Mughal royal bread pudding — saffron-soaked brioche with reduced rabri cream, rose petals, and silver leaf.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--chef">Chef's Pick</span></div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <div class="menu-item-name">Chai Crème Brûlée</div>
-          <div class="menu-item-price">$12</div>
-        </div>
-        <p class="menu-item-desc">Classic French brûlée infused with masala chai — cardamom, ginger, cinnamon — with a turmeric caramel crust.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DRINKS -->
-  <div class="menu-panel" id="panel-drinks">
-    <div class="menu-grid">
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <div class="menu-item-name">Rose Lassi</div>
+          <div class="menu-item-name">Specialty Chili Naan</div>
           <div class="menu-item-price">$8</div>
         </div>
-        <p class="menu-item-desc">Hand-churned yogurt blended with rose water, cardamom, and a touch of honey. Cooling, fragrant, and deeply refreshing.</p>
+        <p class="menu-item-desc">Naan with chili heat baked in.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--spicy">Spicy</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Chicken Naan</div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <p class="menu-item-desc">Naan stuffed with seasoned chicken.</p>
+        <div class="menu-item-badges"><span class="badge badge--halal">Halal</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Olive Naan</div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <p class="menu-item-desc">Naan finished with olives.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Aloo Paratha</div>
+          <div class="menu-item-price">$5</div>
+        </div>
+        <p class="menu-item-desc">Layered flatbread stuffed with spiced potato.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Gobi Paratha</div>
+          <div class="menu-item-price">$5</div>
+        </div>
+        <p class="menu-item-desc">Layered flatbread stuffed with seasoned cauliflower.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Paneer Paratha</div>
+          <div class="menu-item-price">$5</div>
+        </div>
+        <p class="menu-item-desc">Layered flatbread stuffed with paneer.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Naan</div>
+          <div class="menu-item-price">$3</div>
+        </div>
+        <p class="menu-item-desc">Classic leavened tandoor bread.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Chapati</div>
+          <div class="menu-item-price">$3</div>
+        </div>
+        <p class="menu-item-desc">Simple whole wheat flatbread.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Poori</div>
+          <div class="menu-item-price">$3</div>
+        </div>
+        <p class="menu-item-desc">Fried puffy bread.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Kachumber Salad</div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <p class="menu-item-desc">Fresh chopped salad.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegan</span><span class="badge badge--gf">Gluten Free</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Raita</div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <p class="menu-item-desc">Cooling yogurt side.</p>
         <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span></div>
       </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Onion Chutney</div>
+          <div class="menu-item-price">$1</div>
+        </div>
+        <p class="menu-item-desc">A bright onion chutney for the table.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegan</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINKS & SWEETS -->
+  <div class="menu-panel" id="panel-sweets">
+    <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Mango Lassi</div>
-          <div class="menu-item-price">$8</div>
+          <div class="menu-item-price">$6</div>
         </div>
-        <p class="menu-item-desc">Alphonso mango, whole-milk yogurt, a pinch of cardamom. Simple, seasonal, and unforgettable.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span></div>
+        <p class="menu-item-desc">Cooling yogurt drink blended with mango.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--chef">Popular</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Sweet Lassi</div>
+          <div class="menu-item-price">$6</div>
+        </div>
+        <p class="menu-item-desc">Classic sweet yogurt drink.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
           <div class="menu-item-name">Masala Chai</div>
-          <div class="menu-item-price">$6</div>
+          <div class="menu-item-price">$3</div>
         </div>
-        <p class="menu-item-desc">Our house chai blend: Assam tea, whole milk, cracked cardamom, ginger, and cinnamon. Brewed to order, not from a concentrate.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span></div>
+        <p class="menu-item-desc">House masala tea.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Virgin Tamarind Spritz</div>
-          <div class="menu-item-price">$10</div>
+          <div class="menu-item-name">Soft Drink</div>
+          <div class="menu-item-price">$2</div>
         </div>
-        <p class="menu-item-desc">House-made tamarind syrup, fresh lime, Tajin rim, and sparkling water. Bright, bold, and completely original.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegan</span><span class="badge badge--gf">Gluten Free</span></div>
+        <p class="menu-item-desc">Assorted fountain or bottled soft drink.</p>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Nimbu Pani</div>
-          <div class="menu-item-price">$6</div>
+          <div class="menu-item-name">Rice Kheer</div>
+          <div class="menu-item-price">$8</div>
         </div>
-        <p class="menu-item-desc">Indian lemonade with fresh lime, black salt, cumin water, and mint. Order it cold.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegan</span><span class="badge badge--gf">Gluten Free</span></div>
+        <p class="menu-item-desc">Creamy rice pudding.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
-          <div class="menu-item-name">Saffron Thandai</div>
-          <div class="menu-item-price">$11</div>
+          <div class="menu-item-name">Rasmalai</div>
+          <div class="menu-item-price">$8</div>
         </div>
-        <p class="menu-item-desc">A festive North Indian milk drink with saffron, rose petals, melon seeds, and a blend of warming spices. Served chilled.</p>
-        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span><span class="badge badge--gf">Gluten Free</span><span class="badge badge--chef">Seasonal</span></div>
+        <p class="menu-item-desc">Soft cheese dumplings in sweet milk.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Halwa</div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <p class="menu-item-desc">Classic sweet halwa.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Gulab Jamun</div>
+          <div class="menu-item-price">$8</div>
+        </div>
+        <p class="menu-item-desc">Milk-solid dumplings soaked in fragrant syrup.</p>
+        <div class="menu-item-badges"><span class="badge badge--veg">Vegetarian</span></div>
       </div>
     </div>
   </div>
@@ -2003,7 +2240,7 @@ footer {
       <span class="badge badge--veg" style="display:inline-block;">Veg</span> Vegetarian &nbsp;
       <span class="badge badge--gf" style="display:inline-block;">GF</span> Gluten-free &nbsp;
       <span class="badge badge--spicy" style="display:inline-block;">Spicy</span> Heat level &nbsp;
-      <span class="badge badge--chef" style="display:inline-block;">Chef</span> Chef's recommendation
+      <span class="badge badge--chef" style="display:inline-block;">Popular</span> Popular online
       <br>Please inform your server of any allergies. Our kitchen handles nuts, dairy, and gluten.
     </p>
   </div>
@@ -2078,7 +2315,7 @@ footer {
         <div class="review-source">Yelp · January 2025</div>
       </div>
       <div class="review-card reveal">
-        <p class="review-text">"The Chai Crème Brûlée might be the most creative dessert I've had in years. The kind of dish that makes you rethink what a cuisine can be. Already booked our next visit."</p>
+        <p class="review-text">"The gulab jamun was warm, soft, and perfect after dinner. Everything tasted thoughtful, from the curry to the chai. Already booked our next visit."</p>
         <div class="review-author">Fatima A.</div>
         <div class="review-source">Tripadvisor · February 2025</div>
       </div>
