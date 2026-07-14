@@ -717,6 +717,15 @@ hr.ornament--light { opacity: 0.2; }
   gap: 0.4rem;
   flex-wrap: wrap;
 }
+.menu-cert-row {
+  margin: 1.2rem 0 2rem;
+}
+.menu-cert-row .badge {
+  display: inline-flex;
+  align-items: center;
+  border: 0.5px solid rgba(244,150,42,0.28);
+  padding: 6px 12px;
+}
 .badge {
   font-size: 9px;
   font-weight: 500;
@@ -1599,7 +1608,7 @@ footer {
     <div class="about-pillars">
       <div class="about-pillar">
         <div class="about-pillar-title">Halal Certified</div>
-        <div class="about-pillar-body">All protein sourced from certified halal suppliers.</div>
+        <div class="about-pillar-body">The full restaurant is halal, from dine-in to takeout.</div>
       </div>
       <div class="about-pillar">
         <div class="about-pillar-title">Nouvelle Indian</div>
@@ -1662,6 +1671,9 @@ footer {
     <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'breads')">Breads & Sides</button>
     <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'sweets')">Drinks & Sweets</button>
   </div>
+  <div class="menu-cert-row">
+    <span class="badge badge--halal">Halal Certified Restaurant</span>
+  </div>
 
   <!-- TAPAS -->
   <div class="menu-panel active" id="panel-tapas">
@@ -1673,7 +1685,6 @@ footer {
         </div>
         <p class="menu-item-desc">Fried calamari tossed with South Indian spices.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--spicy">Medium</span>
         </div>
       </div>
@@ -1684,7 +1695,6 @@ footer {
         </div>
         <p class="menu-item-desc">Grilled chicken breast and ground meat marinated with ginger, garlic, yogurt, and mild spices.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--spicy">Mild</span>
         </div>
       </div>
@@ -1695,7 +1705,6 @@ footer {
         </div>
         <p class="menu-item-desc">Zesty marinated fish fritters named for the city where the dish originated.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--spicy">Medium</span>
         </div>
       </div>
@@ -1706,7 +1715,6 @@ footer {
         </div>
         <p class="menu-item-desc">Spicy stir-fried chicken with peppers and South Indian seasoning.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--spicy">Spicy</span>
         </div>
       </div>
@@ -1737,7 +1745,6 @@ footer {
           <div class="menu-item-price">$12</div>
         </div>
         <p class="menu-item-desc">Crisp flutes filled with spiced minced meat.</p>
-        <div class="menu-item-badges"><span class="badge badge--halal">Halal</span></div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
@@ -1791,7 +1798,6 @@ footer {
         </div>
         <p class="menu-item-desc">Grilled white meat cooked in a savory creamy tomato sauce, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--chef">Popular</span>
           <span class="badge badge--spicy">Mild</span>
         </div>
@@ -1803,7 +1809,6 @@ footer {
         </div>
         <p class="menu-item-desc">Chicken cooked in a creamy, gently spiced korma sauce, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--spicy">Mild</span>
         </div>
       </div>
@@ -1814,7 +1819,6 @@ footer {
         </div>
         <p class="menu-item-desc">Lightly creamed spinach sauteed with ginger and garlic, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--gf">Gluten Free</span>
         </div>
       </div>
@@ -1825,7 +1829,6 @@ footer {
         </div>
         <p class="menu-item-desc">Chicken curry with Southern Indian seasoning, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--spicy">Medium</span>
         </div>
       </div>
@@ -1836,7 +1839,6 @@ footer {
         </div>
         <p class="menu-item-desc">Lamb cooked in a creamy, gently spiced korma sauce, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--spicy">Mild</span>
         </div>
       </div>
@@ -1847,7 +1849,6 @@ footer {
         </div>
         <p class="menu-item-desc">Lamb with lightly creamed spinach, ginger, and garlic, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--gf">Gluten Free</span>
         </div>
       </div>
@@ -1858,7 +1859,6 @@ footer {
         </div>
         <p class="menu-item-desc">Sauteed shrimp cooked in tomato and coconut milk sauce, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--gf">Gluten Free</span>
         </div>
       </div>
@@ -1869,7 +1869,6 @@ footer {
         </div>
         <p class="menu-item-desc">Sliced fish cooked in a zesty coconut milk and green mango sauce, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--gf">Gluten Free</span>
         </div>
       </div>
@@ -1879,9 +1878,6 @@ footer {
           <div class="menu-item-price">$22+</div>
         </div>
         <p class="menu-item-desc">Choice of protein in homestyle curry, served with rice.</p>
-        <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
-        </div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
@@ -1890,7 +1886,6 @@ footer {
         </div>
         <p class="menu-item-desc">Choice of protein in a tangy, spicy vindaloo sauce, served with rice.</p>
         <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
           <span class="badge badge--spicy">Spicy</span>
         </div>
       </div>
@@ -1900,9 +1895,6 @@ footer {
           <div class="menu-item-price">$22</div>
         </div>
         <p class="menu-item-desc">Ground meat and peas cooked with aromatic spices, served with rice.</p>
-        <div class="menu-item-badges">
-          <span class="badge badge--halal">Halal</span>
-        </div>
       </div>
     </div>
   </div>
@@ -2010,7 +2002,6 @@ footer {
           <div class="menu-item-price">$26</div>
         </div>
         <p class="menu-item-desc">Lamb and rice prepared biryani style with fragrant spices.</p>
-        <div class="menu-item-badges"><span class="badge badge--halal">Halal</span></div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
@@ -2018,7 +2009,6 @@ footer {
           <div class="menu-item-price">$22</div>
         </div>
         <p class="menu-item-desc">Chicken and rice prepared biryani style with fragrant spices.</p>
-        <div class="menu-item-badges"><span class="badge badge--halal">Halal</span></div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
@@ -2079,7 +2069,6 @@ footer {
           <div class="menu-item-price">$8</div>
         </div>
         <p class="menu-item-desc">Naan stuffed with seasoned chicken.</p>
-        <div class="menu-item-badges"><span class="badge badge--halal">Halal</span></div>
       </div>
       <div class="menu-item">
         <div class="menu-item-header">
@@ -2234,7 +2223,6 @@ footer {
   <div style="margin-top:3rem;padding:1.5rem;background:rgba(45,21,8,0.04);border-radius:8px;border:0.5px solid rgba(45,21,8,0.1);">
     <p style="font-size:12px;font-weight:300;color:var(--smoke);line-height:1.65;">
       <strong style="color:var(--bark);font-weight:500;">Dietary key:</strong> &nbsp;
-      <span class="badge badge--halal" style="display:inline-block;">Halal</span> Halal-certified &nbsp;
       <span class="badge badge--veg" style="display:inline-block;">Veg</span> Vegetarian &nbsp;
       <span class="badge badge--gf" style="display:inline-block;">GF</span> Gluten-free &nbsp;
       <span class="badge badge--spicy" style="display:inline-block;">Spicy</span> Heat level &nbsp;
