@@ -348,15 +348,17 @@ hr.ornament--light { opacity: 0.2; }
   max-width: 1180px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 5rem;
-  align-items: center;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 4.5rem;
+  align-items: start;
 }
 @media (max-width: 820px) {
   #about { grid-template-columns: 1fr; gap: 3rem; }
 }
 .about-visual {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .about-img-placeholder {
   width: 100%;
@@ -400,7 +402,7 @@ hr.ornament--light { opacity: 0.2; }
 .about-pillars {
   display: flex;
   flex-direction: column;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   border-top: 0.5px solid rgba(45,21,8,0.12);
 }
 .about-pillar {
@@ -430,6 +432,7 @@ hr.ornament--light { opacity: 0.2; }
   border-left: 1.5px solid rgba(232,83,26,0.38);
   padding-left: 2rem;
   position: relative;
+  max-width: 640px;
 }
 .about-story-copy::before {
   content: '';
@@ -1474,6 +1477,24 @@ footer {
       <span class="about-established-year">2014</span>
       <span class="about-established-label">Est. Bayside, NY</span>
     </div>
+    <div class="about-pillars">
+      <div class="about-pillar">
+        <div class="about-pillar-title">Halal Certified</div>
+        <div class="about-pillar-body">All protein sourced from certified halal suppliers.</div>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-title">Nouvelle Indian</div>
+        <div class="about-pillar-body">Traditional recipes, cooked with modern technique.</div>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-title">Family Owned</div>
+        <div class="about-pillar-body">Same owners, same kitchen, since 2014.</div>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-title">Inclusive Menu</div>
+        <div class="about-pillar-body">Vegetarian, gluten-free, and dairy-free options across the menu.</div>
+      </div>
+    </div>
   </div>
 
   <div class="reveal about-story-copy">
@@ -1498,24 +1519,6 @@ footer {
     <div class="story-signoff">Khao, pio, aur jiyo<br><span style="font-size:0.62em;">Eat, drink, and live</span></div>
     <div class="story-chef">Sumita Gohal-Verma · Executive Chef</div>
 
-    <div class="about-pillars">
-      <div class="about-pillar">
-        <div class="about-pillar-title">Halal Certified</div>
-        <div class="about-pillar-body">All protein sourced from certified halal suppliers.</div>
-      </div>
-      <div class="about-pillar">
-        <div class="about-pillar-title">Nouvelle Indian</div>
-        <div class="about-pillar-body">Traditional recipes, cooked with modern technique.</div>
-      </div>
-      <div class="about-pillar">
-        <div class="about-pillar-title">Family Owned</div>
-        <div class="about-pillar-body">Same owners, same kitchen, since 2014.</div>
-      </div>
-      <div class="about-pillar">
-        <div class="about-pillar-title">Inclusive Menu</div>
-        <div class="about-pillar-body">Vegetarian, gluten-free, and dairy-free options across the menu.</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -2152,7 +2155,7 @@ if (dateInput) {
   let startTarget = 0;
   let dragDistance = 0;
   let pausedUntil = 0;
-  const autoSpeed = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 0.42;
+  const autoSpeed = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 0.58;
 
   function measure() {
     const styles = window.getComputedStyle(track);
