@@ -23,7 +23,7 @@
   --parchment: #F5EBD8;
   --espresso:  #2D1508;
   --bark:      #5C2D0E;
-  --smoke:     #8C6B52;
+  --smoke:     #65472F;
   --white:     #FFFFFF;
   --nav-h:     72px;
 }
@@ -39,7 +39,43 @@ body {
   overflow-x: hidden;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* ── UTILITY ── */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10000;
+  padding: 10px 14px;
+  border-radius: 3px;
+  background: var(--cream);
+  color: var(--espresso);
+  font-weight: 500;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--ember);
+  outline-offset: 4px;
+}
 .section-label {
   font-size: 10px;
   font-weight: 500;
@@ -94,10 +130,10 @@ hr.ornament--light { opacity: 0.2; }
   transition: all 0.25s ease;
 }
 .btn--primary {
-  background: var(--saffron);
+  background: var(--crimson);
   color: var(--white);
 }
-.btn--primary:hover { background: var(--crimson); }
+.btn--primary:hover { background: #8F2107; }
 .btn--outline {
   background: transparent;
   color: var(--cream);
@@ -656,7 +692,7 @@ hr.ornament--light { opacity: 0.2; }
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--smoke);
+  color: var(--bark);
   cursor: pointer;
   border: none;
   background: none;
@@ -665,8 +701,8 @@ hr.ornament--light { opacity: 0.2; }
   white-space: nowrap;
   transition: all 0.2s;
 }
-.menu-tab:hover { color: var(--saffron); }
-.menu-tab.active { color: var(--saffron); border-bottom-color: var(--saffron); }
+.menu-tab:hover { color: var(--crimson); }
+.menu-tab.active { color: var(--crimson); border-bottom-color: var(--crimson); }
 
 .menu-panel { display: none; }
 .menu-panel.active { display: block; }
@@ -706,8 +742,8 @@ hr.ornament--light { opacity: 0.2; }
 }
 .menu-item-desc {
   font-size: 12px;
-  font-weight: 300;
-  color: var(--smoke);
+  font-weight: 400;
+  color: var(--bark);
   line-height: 1.7;
   margin-bottom: 0.5rem;
   max-width: 560px;
@@ -756,16 +792,16 @@ hr.ornament--light { opacity: 0.2; }
 }
 .badge {
   font-size: 9px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 3px 8px;
   border-radius: 12px;
 }
-.badge--halal { background: rgba(244,150,42,0.12); color: var(--gold); }
-.badge--veg   { background: rgba(72,132,62,0.1); color: #3A7A30; }
-.badge--gf    { background: rgba(44,82,160,0.1); color: #2C52A0; }
-.badge--spicy { background: rgba(232,83,26,0.1); color: var(--saffron); }
+.badge--halal { background: rgba(244,150,42,0.12); color: #6F3F08; }
+.badge--veg   { background: rgba(72,132,62,0.1); color: #255A1D; }
+.badge--gf    { background: rgba(44,82,160,0.1); color: #1F3E7B; }
+.badge--spicy { background: rgba(232,83,26,0.1); color: #A22D0E; }
 .badge--chef  { background: rgba(45,21,8,0.08); color: var(--bark); }
 
 .menu-section-title {
@@ -935,6 +971,7 @@ hr.ornament--light { opacity: 0.2; }
   flex: 0 0 clamp(330px, 32vw, 520px);
   height: clamp(360px, calc(100vh - 300px), 680px);
   padding: 9px;
+  appearance: none;
   border: 1px solid rgba(244,150,42,0.46);
   border-radius: 10px 3px 10px 3px;
   overflow: hidden;
@@ -944,6 +981,7 @@ hr.ornament--light { opacity: 0.2; }
     rgba(253,246,238,0.035);
   box-shadow: 0 18px 34px rgba(0,0,0,0.24), inset 0 0 0 1px rgba(253,246,238,0.12);
   cursor: zoom-in;
+  color: inherit;
 }
 .gallery-card::before {
   content: '';
@@ -978,6 +1016,7 @@ hr.ornament--light { opacity: 0.2; }
   position: relative;
   z-index: 1;
 }
+.gallery-card:focus-visible img,
 .gallery-card:hover img { transform: scale(1.035); }
 .gallery-lightbox {
   display: none;
@@ -987,6 +1026,9 @@ hr.ornament--light { opacity: 0.2; }
   background: rgba(18,8,3,0.96);
   align-items: center;
   justify-content: center;
+}
+.gallery-lightbox[aria-hidden="true"] {
+  visibility: hidden;
 }
 .gallery-lightbox.open { display: flex; }
 .gallery-lightbox img {
@@ -1395,7 +1437,6 @@ hr.ornament--light { opacity: 0.2; }
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: 300;
-  outline: none;
   transition: border-color 0.2s;
   width: 100%;
   appearance: none;
@@ -1482,10 +1523,10 @@ footer {
 }
 .footer-brand-sub {
   font-size: 10px;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(253,246,238,0.3);
+  color: rgba(253,246,238,0.72);
   margin-bottom: 0.75rem;
 }
 .footer-brand-desc {
@@ -1503,8 +1544,8 @@ footer {
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
 .footer-links a {
   font-size: 12px;
-  font-weight: 300;
-  color: rgba(253,246,238,0.45);
+  font-weight: 400;
+  color: rgba(253,246,238,0.76);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -1520,13 +1561,14 @@ footer {
 }
 .footer-copy {
   font-size: 10px;
-  font-weight: 300;
-  color: rgba(253,246,238,0.2);
+  font-weight: 400;
+  color: rgba(253,246,238,0.72);
   letter-spacing: 0.08em;
 }
 .footer-credit {
   color: #F6B78D;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .footer-cert {
   display: flex;
@@ -1534,13 +1576,13 @@ footer {
 }
 .cert-pill {
   font-size: 9px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   padding: 4px 10px;
   border-radius: 12px;
-  border: 0.5px solid rgba(244,150,42,0.25);
-  color: rgba(244,150,42,0.6);
+  border: 0.5px solid rgba(244,150,42,0.55);
+  color: rgba(255,196,124,0.95);
 }
 
 
@@ -1559,17 +1601,20 @@ footer {
   align-items: center;
   justify-content: center;
   opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   transform: translateY(16px);
   transition: all 0.3s;
   z-index: 500;
   box-shadow: 0 4px 16px rgba(232,83,26,0.4);
 }
-#back-top.show { opacity: 1; transform: translateY(0); }
+#back-top.show { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
 #back-top svg { width: 18px; height: 18px; fill: var(--white); }
 
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ═══ NAV ═══ -->
 <nav id="nav" aria-label="Main navigation">
@@ -1585,13 +1630,13 @@ footer {
     <li><a href="#contact">Contact</a></li>
     <li><a href="#order" class="nav-cta">Order Now</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+  <button class="nav-hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- Mobile nav -->
-<div class="nav-mobile" id="mobileNav">
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
   <a href="#about" onclick="closeMobileNav()">Our Story</a>
   <a href="#menu" onclick="closeMobileNav()">Menu</a>
   <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
@@ -1600,6 +1645,7 @@ footer {
   <a href="#order" onclick="closeMobileNav()" style="color:var(--ember)">Order Now</a>
 </div>
 
+<main id="main" tabindex="-1">
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
@@ -1695,15 +1741,15 @@ footer {
   </div>
 
   <div class="menu-tabs" role="tablist" aria-label="Menu categories">
-    <button class="menu-tab active" role="tab" aria-selected="true" onclick="switchTab(this,'tapas')">Tapas</button>
-    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'mains')">Mains</button>
-    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'vegetarian')">Vegetarian</button>
-    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'rice')">Rice</button>
-    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'breads')">Breads & Sides</button>
-    <button class="menu-tab" role="tab" aria-selected="false" onclick="switchTab(this,'sweets')">Drinks & Sweets</button>
+    <button class="menu-tab active" id="tab-tapas" role="tab" aria-selected="true" aria-controls="panel-tapas" tabindex="0" onclick="switchTab(this,'tapas')">Tapas</button>
+    <button class="menu-tab" id="tab-mains" role="tab" aria-selected="false" aria-controls="panel-mains" tabindex="-1" onclick="switchTab(this,'mains')">Mains</button>
+    <button class="menu-tab" id="tab-vegetarian" role="tab" aria-selected="false" aria-controls="panel-vegetarian" tabindex="-1" onclick="switchTab(this,'vegetarian')">Vegetarian</button>
+    <button class="menu-tab" id="tab-rice" role="tab" aria-selected="false" aria-controls="panel-rice" tabindex="-1" onclick="switchTab(this,'rice')">Rice</button>
+    <button class="menu-tab" id="tab-breads" role="tab" aria-selected="false" aria-controls="panel-breads" tabindex="-1" onclick="switchTab(this,'breads')">Breads & Sides</button>
+    <button class="menu-tab" id="tab-sweets" role="tab" aria-selected="false" aria-controls="panel-sweets" tabindex="-1" onclick="switchTab(this,'sweets')">Drinks & Sweets</button>
   </div>
   <!-- TAPAS -->
-  <div class="menu-panel active" id="panel-tapas">
+  <div class="menu-panel active" id="panel-tapas" role="tabpanel" aria-labelledby="tab-tapas" tabindex="0">
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
@@ -1816,7 +1862,7 @@ footer {
   </div>
 
   <!-- MAINS -->
-  <div class="menu-panel" id="panel-mains">
+  <div class="menu-panel" id="panel-mains" role="tabpanel" aria-labelledby="tab-mains" tabindex="0" hidden>
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
@@ -1927,7 +1973,7 @@ footer {
   </div>
 
   <!-- VEGETARIAN -->
-  <div class="menu-panel" id="panel-vegetarian">
+  <div class="menu-panel" id="panel-vegetarian" role="tabpanel" aria-labelledby="tab-vegetarian" tabindex="0" hidden>
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
@@ -2021,7 +2067,7 @@ footer {
   </div>
 
   <!-- RICE -->
-  <div class="menu-panel" id="panel-rice">
+  <div class="menu-panel" id="panel-rice" role="tabpanel" aria-labelledby="tab-rice" tabindex="0" hidden>
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
@@ -2072,7 +2118,7 @@ footer {
   </div>
 
   <!-- BREADS & SIDES -->
-  <div class="menu-panel" id="panel-breads">
+  <div class="menu-panel" id="panel-breads" role="tabpanel" aria-labelledby="tab-breads" tabindex="0" hidden>
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
@@ -2181,7 +2227,7 @@ footer {
   </div>
 
   <!-- DRINKS & SWEETS -->
-  <div class="menu-panel" id="panel-sweets">
+  <div class="menu-panel" id="panel-sweets" role="tabpanel" aria-labelledby="tab-sweets" tabindex="0" hidden>
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
@@ -2282,19 +2328,19 @@ footer {
     </div>
     <div class="gallery-track-wrap">
       <div class="gallery-track" id="gallery-track">
-        <div class="gallery-card"><img src="gallery/1000030580.jpg" alt="Masala Box dining room table setting"></div>
-        <div class="gallery-card"><img src="gallery/1000035068.jpg" alt="Masala Box plated Indian entree"></div>
-        <div class="gallery-card"><img src="gallery/1000035072.jpg" alt="Masala Box curry and rice dish"></div>
-        <div class="gallery-card"><img src="gallery/1000036038.jpg" alt="Masala Box restaurant interior"></div>
-        <div class="gallery-card"><img src="gallery/1000044319.jpg" alt="Masala Box plated appetizer"></div>
-        <div class="gallery-card"><img src="gallery/1000044549.jpg" alt="Masala Box Indian dish close up"></div>
-        <div class="gallery-card"><img src="gallery/1000049959.jpg" alt="Masala Box table spread"></div>
+        <button class="gallery-card" type="button"><img src="gallery/1000030580.jpg" alt="Masala Box dining room table setting"></button>
+        <button class="gallery-card" type="button"><img src="gallery/1000035068.jpg" alt="Masala Box plated Indian entree"></button>
+        <button class="gallery-card" type="button"><img src="gallery/1000035072.jpg" alt="Masala Box curry and rice dish"></button>
+        <button class="gallery-card" type="button"><img src="gallery/1000036038.jpg" alt="Masala Box restaurant interior"></button>
+        <button class="gallery-card" type="button"><img src="gallery/1000044319.jpg" alt="Masala Box plated appetizer"></button>
+        <button class="gallery-card" type="button"><img src="gallery/1000044549.jpg" alt="Masala Box Indian dish close up"></button>
+        <button class="gallery-card" type="button"><img src="gallery/1000049959.jpg" alt="Masala Box table spread"></button>
       </div>
     </div>
   </div>
 </section>
 
-<div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-label="Gallery image viewer">
+<div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
   <button class="gallery-lb-close" type="button" id="gallery-lb-close" aria-label="Close gallery image">&times;</button>
   <button class="gallery-lb-btn gallery-lb-prev" type="button" id="gallery-lb-prev" aria-label="Previous gallery image">&#8592;</button>
   <img id="gallery-lb-img" src="" alt="">
@@ -2437,6 +2483,8 @@ footer {
 </section>
 
 
+</main>
+
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-inner">
@@ -2489,8 +2537,8 @@ footer {
 
 
 <!-- ═══ BACK TO TOP ═══ -->
-<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
-  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+<button id="back-top" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
 </button>
 
 
@@ -2505,10 +2553,14 @@ window.addEventListener('scroll', () => {
 /* ── Mobile nav ── */
 const hamburger = document.getElementById('hamburgerBtn');
 const mobileNav = document.getElementById('mobileNav');
-hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('open');
-});
-function closeMobileNav() { mobileNav.classList.remove('open'); }
+function setMobileNav(open) {
+  mobileNav.classList.toggle('open', open);
+  mobileNav.setAttribute('aria-hidden', String(!open));
+  hamburger.setAttribute('aria-expanded', String(open));
+  hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+hamburger.addEventListener('click', () => setMobileNav(!mobileNav.classList.contains('open')));
+function closeMobileNav() { setMobileNav(false); }
 
 /* ── Scroll reveal ── */
 const revealObserver = new IntersectionObserver((entries) => {
@@ -2526,12 +2578,33 @@ function switchTab(btn, panelId) {
   document.querySelectorAll('.menu-tab').forEach(t => {
     t.classList.remove('active');
     t.setAttribute('aria-selected', 'false');
+    t.setAttribute('tabindex', '-1');
   });
-  document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.menu-panel').forEach(p => {
+    p.classList.remove('active');
+    p.hidden = true;
+  });
   btn.classList.add('active');
   btn.setAttribute('aria-selected', 'true');
-  document.getElementById('panel-' + panelId).classList.add('active');
+  btn.setAttribute('tabindex', '0');
+  const panel = document.getElementById('panel-' + panelId);
+  panel.classList.add('active');
+  panel.hidden = false;
 }
+
+document.querySelectorAll('.menu-tab').forEach((tab, index, tabs) => {
+  tab.addEventListener('keydown', event => {
+    let nextIndex = null;
+    if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+    if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+    if (event.key === 'Home') nextIndex = 0;
+    if (event.key === 'End') nextIndex = tabs.length - 1;
+    if (nextIndex === null) return;
+    event.preventDefault();
+    tabs[nextIndex].focus();
+    switchTab(tabs[nextIndex], tabs[nextIndex].id.replace('tab-', ''));
+  });
+});
 
 
 /* ── Reservation form ── */
@@ -2559,14 +2632,24 @@ if (dateInput) {
   const lightbox = document.getElementById('gallery-lightbox');
   const lightboxImg = document.getElementById('gallery-lb-img');
   const lightboxCounter = document.getElementById('gallery-lb-counter');
+  const closeBtn = document.getElementById('gallery-lb-close');
   const originalCards = Array.from(document.querySelectorAll('.gallery-card'));
   const originalImages = originalCards.map(card => card.querySelector('img'));
   let current = 0;
+  let lastFocused = null;
 
   if (!wrap || !track || !originalCards.length) return;
 
-  track.prepend(...originalCards.map(card => card.cloneNode(true)));
-  track.append(...originalCards.map(card => card.cloneNode(true)));
+  function cloneGalleryCard(card) {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.setAttribute('tabindex', '-1');
+    clone.querySelector('img')?.setAttribute('alt', '');
+    return clone;
+  }
+
+  track.prepend(...originalCards.map(cloneGalleryCard));
+  track.append(...originalCards.map(cloneGalleryCard));
 
   let currentX = 0;
   let targetX = 0;
@@ -2662,34 +2745,50 @@ if (dateInput) {
   }
 
   function open(index) {
+    lastFocused = document.activeElement;
     show(index);
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
   }
 
   function close() {
     lightbox.classList.remove('open');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    lastFocused?.focus();
   }
 
-  Array.from(track.querySelectorAll('.gallery-card img')).forEach((img, index) => {
-    img.parentElement.addEventListener('click', () => {
+  Array.from(track.querySelectorAll('.gallery-card')).forEach((card, index) => {
+    card.addEventListener('click', () => {
       if (dragDistance > 8) return;
       open(index % originalImages.length);
     });
   });
 
-  document.getElementById('gallery-lb-close')?.addEventListener('click', close);
+  closeBtn?.addEventListener('click', close);
   document.getElementById('gallery-lb-prev')?.addEventListener('click', () => show(current - 1));
   document.getElementById('gallery-lb-next')?.addEventListener('click', () => show(current + 1));
   lightbox?.addEventListener('click', event => { if (event.target === lightbox) close(); });
   document.addEventListener('keydown', event => {
+    if (mobileNav?.classList.contains('open') && event.key === 'Escape') closeMobileNav();
     if (!lightbox?.classList.contains('open')) return;
     if (event.key === 'Escape') close();
     if (event.key === 'ArrowLeft') show(current - 1);
     if (event.key === 'ArrowRight') show(current + 1);
+    if (event.key === 'Tab') {
+      const focusable = Array.from(lightbox.querySelectorAll('button'));
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
   });
 })();
 
